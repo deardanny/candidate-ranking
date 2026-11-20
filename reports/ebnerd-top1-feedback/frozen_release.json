@@ -1,0 +1,127 @@
+{
+  "frozen_utc": "2026-11-19T08:20:15.025647+00:00",
+  "selection_sha256": "600ce1a2db9a2ecee5360bfa65a247dbf0791b09f0a35dba1f0c41949d8c2f6d",
+  "models": [
+    {
+      "name": "final-exposure_ndcg-s42",
+      "arm": "exposure_ndcg",
+      "seed": 42,
+      "rounds": 116,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "415167c68f58d12e47c02c54044a43b9f7a3091fd73877a9c784e65fe4662979"
+    },
+    {
+      "name": "final-exposure_ndcg-s43",
+      "arm": "exposure_ndcg",
+      "seed": 43,
+      "rounds": 105,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "355d20c61ef378f0fa1fe68583b91022cf07220b05383f4a15b77d1d5cd18aec"
+    },
+    {
+      "name": "final-exposure_ndcg-s44",
+      "arm": "exposure_ndcg",
+      "seed": 44,
+      "rounds": 119,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "bebbcac16af1675220d0e562d270160d6fef7f05d4cbcce4b67c203b73cd05c4"
+    },
+    {
+      "name": "final-exposure_top1-s42",
+      "arm": "exposure_top1",
+      "seed": 42,
+      "rounds": 92,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "c83267d848fe6763ec88562a33bdc4c83a585d269e59cc13eea1db1de9e0fafb"
+    },
+    {
+      "name": "final-exposure_top1-s43",
+      "arm": "exposure_top1",
+      "seed": 43,
+      "rounds": 1,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "bb41426bb6cd96df9e5373dbd2b4bf8b98cd274f0e9b23f3684498e75e1c5b7b"
+    },
+    {
+      "name": "final-exposure_top1-s44",
+      "arm": "exposure_top1",
+      "seed": 44,
+      "rounds": 1,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "7bf66a74ae9e3c4dfa72d9cc563b4ac50f7d762947c855931d75500aae39ddbe"
+    },
+    {
+      "name": "final-feedback_ndcg-s42",
+      "arm": "feedback_ndcg",
+      "seed": 42,
+      "rounds": 174,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "eab3ef61066c1e4c35009f5e3155243fb15699b5a362799540c7e0f02677682c"
+    },
+    {
+      "name": "final-feedback_ndcg-s43",
+      "arm": "feedback_ndcg",
+      "seed": 43,
+      "rounds": 180,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "e8b7c1cea37b0628a90701a33d2067f94f86b2a90fb372cdb77b5d4317826019"
+    },
+    {
+      "name": "final-feedback_ndcg-s44",
+      "arm": "feedback_ndcg",
+      "seed": 44,
+      "rounds": 177,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "f9e14d6c21b4f3168edf03a23120852698b3a599453f64a95302cfe45b582ce4"
+    },
+    {
+      "name": "final-feedback_top1-s42",
+      "arm": "feedback_top1",
+      "seed": 42,
+      "rounds": 164,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "e8ec1720901f5232cd1ee22fb3aaec39528d3df4b9de6053afe2631377b5a46a"
+    },
+    {
+      "name": "final-feedback_top1-s43",
+      "arm": "feedback_top1",
+      "seed": 43,
+      "rounds": 58,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "098114b6b2bc4789aa3350eb07eabd96bdaaacbe1315929ce915cfa644b94a5b"
+    },
+    {
+      "name": "final-feedback_top1-s44",
+      "arm": "feedback_top1",
+      "seed": 44,
+      "rounds": 48,
+      "fit_requests": 228913,
+      "fit_candidate_rows": 2540513,
+      "fit_labels_before": "2023-05-25 05:00:00",
+      "model_sha256": "f06272582836e61718449feab2c23b0dbd763101d90ac3601b89bfdb737579a1"
+    }
+  ],
+  "holdout_labels_read": false
+}

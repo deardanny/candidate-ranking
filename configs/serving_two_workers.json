@@ -1,0 +1,10 @@
+{
+  "name": "two-processes-two-threads",
+  "uvicorn_workers": 2,
+  "environment": {
+    "FAIRJOB_TORCH_THREADS": "2",
+    "FAIRJOB_MAX_WORKERS": "1",
+    "FAIRJOB_MAX_INFLIGHT": "2",
+    "FAIRJOB_BATCH_CANDIDATES": "1"
+  }
+}

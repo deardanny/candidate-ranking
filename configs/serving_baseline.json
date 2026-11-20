@@ -1,0 +1,9 @@
+{
+  "name": "week2-baseline",
+  "uvicorn_workers": 1,
+  "environment": {
+    "FAIRJOB_TORCH_THREADS": "1",
+    "FAIRJOB_MAX_WORKERS": "1",
+    "FAIRJOB_MAX_INFLIGHT": "2"
+  }
+}

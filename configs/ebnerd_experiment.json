@@ -1,0 +1,20 @@
+{
+  "version": "ebnerd-experiment-v1",
+  "seed": 42,
+  "development_folds": [
+    {"name": "early", "fit_end": "2023-05-21 07:00:00", "validation_end": "2023-05-23 07:00:00"},
+    {"name": "late", "fit_end": "2023-05-23 07:00:00", "validation_end": "2023-05-25 07:00:00"}
+  ],
+  "variants": ["behavior", "behavior_history", "freshness", "metadata", "personalized", "personalized_no_freshness"],
+  "max_rounds": 240,
+  "early_stopping_rounds": 25,
+  "primary_metric": "tie_expected_ndcg5",
+  "selection": "highest mean development NDCG@5; report all predeclared ablations on final holdout, never select on test",
+  "primary_personalization_comparison": ["personalized", "metadata"],
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261119,
+  "gate": "primary NDCG difference user bootstrap lower bound > 0; Hit@1 and cold-click Top1 differences nonnegative; both development folds positive",
+  "params": {"objective": "lambdarank", "metric": "ndcg", "ndcg_eval_at": [5], "label_gain": [0, 1], "lambdarank_truncation_level": 8, "learning_rate": 0.05, "num_leaves": 31, "min_data_in_leaf": 200, "lambda_l2": 10, "max_bin": 127, "feature_fraction": 1.0, "deterministic": true, "force_col_wise": true, "num_threads": 6, "verbosity": -1},
+  "assumptions": {"history": "fixed history strictly preceding each official split", "publication_time": "published_time assumed stable; inconsistent requests quarantined", "article_metadata": "released snapshot; not verified point-in-time", "candidate_set": "recorded inview candidates; conditional on a clicked request; not a causal CTR estimator"},
+  "negative_control": "deterministic permutation of user histories within the same snapshot, applied to personalized model without retraining"
+}

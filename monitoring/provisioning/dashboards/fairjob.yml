@@ -1,0 +1,9 @@
+apiVersion: 1
+providers:
+  - name: FairJob
+    folder: FairJob
+    type: file
+    disableDeletion: true
+    editable: false
+    options:
+      path: ${FAIRJOB_PROJECT_ROOT}/monitoring/dashboards

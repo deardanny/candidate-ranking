@@ -1,0 +1,128 @@
+{
+  "$defs": {
+    "LoggedCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "item_id": {
+          "minLength": 1,
+          "title": "Item Id",
+          "type": "string"
+        },
+        "features": {
+          "additionalProperties": {
+            "$ref": "#/$defs/LoggedFeature"
+          },
+          "minProperties": 1,
+          "title": "Features",
+          "type": "object"
+        }
+      },
+      "required": [
+        "item_id",
+        "features"
+      ],
+      "title": "LoggedCandidate",
+      "type": "object"
+    },
+    "LoggedFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Value"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        },
+        "source_event_at": {
+          "format": "date-time",
+          "title": "Source Event At",
+          "type": "string"
+        },
+        "available_at": {
+          "format": "date-time",
+          "title": "Available At",
+          "type": "string"
+        },
+        "computed_at": {
+          "format": "date-time",
+          "title": "Computed At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "version",
+        "source_event_at",
+        "available_at",
+        "computed_at"
+      ],
+      "title": "LoggedFeature",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "ranking-request-v1",
+      "default": "ranking-request-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request_id": {
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "user_key": {
+      "minLength": 1,
+      "title": "User Key",
+      "type": "string"
+    },
+    "served_at": {
+      "format": "date-time",
+      "title": "Served At",
+      "type": "string"
+    },
+    "policy_version": {
+      "minLength": 1,
+      "title": "Policy Version",
+      "type": "string"
+    },
+    "model_version": {
+      "minLength": 1,
+      "title": "Model Version",
+      "type": "string"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/LoggedCandidate"
+      },
+      "minItems": 1,
+      "title": "Candidates",
+      "type": "array"
+    }
+  },
+  "required": [
+    "request_id",
+    "user_key",
+    "served_at",
+    "policy_version",
+    "model_version",
+    "candidates"
+  ],
+  "title": "RequestSnapshot",
+  "type": "object"
+}

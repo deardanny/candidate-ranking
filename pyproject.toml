@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fairjob-ranker"
+version = "0.2.0"
+description = "Reproducible FairJob candidate ranking experiments"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy==2.3.5", "pandas==2.2.3", "scipy==1.16.3",
+  "scikit-learn==1.7.2", "lightgbm==4.6.0", "pyarrow==22.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.0.1"]
+week2 = ["torch==2.15.0", "fastapi==0.165.0", "uvicorn==0.54.0", "redis==8.1.0", "httpx==0.28.1"]
+week3 = ["psutil==7.2.2", "PyYAML==6.0.3"]
+v2 = ["mlflow==3.18.0", "prometheus-client==0.26.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

@@ -1,0 +1,20 @@
+{
+  "experiment_name": "fairjob-context-ablation-v1",
+  "development_split_salt": "fairjob-v2-development-v1",
+  "inner_train_percent": 80,
+  "variants": ["context_only", "ad_only", "full"],
+  "seeds": [42, 43, 44],
+  "representative_seed": 42,
+  "lightgbm_config": "configs/lightgbm_baseline.json",
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261119,
+  "near_tie_threshold": 1e-12,
+  "checkpoint_rule": "Each model minimizes inner-validation LogLoss with the same training budget. All models freeze before outer validation is loaded. No best-seed selection.",
+  "feature_contract": "Use the audited implementation schema: context=cat0,cat1,num16..num50; ad=cat2..cat12; full=all 48. These are observed invariance roles, not recovered semantic meanings. Exclude IDs, logged rank, labels, displayrandom, protected_attribute and senior.",
+  "ranking_contract": "Only impressions with >=2 candidates and both clicked/nonclicked ads. Primary NDCG@5 averages over all permutations within exact score ties, without product IDs. Pair accuracy averages within-impression positive-negative concordance, ties=0.5, then equally averages impressions. Also report legacy product-ID tie breaking, random baseline and randomized-display subgroup.",
+  "uncertainty": "Paired user-cluster bootstrap, retaining impression/row multiplicity. Primary estimates average paired metric differences over all three seeds before user resampling; also show fixed representative seed 42. Intervals condition on these trained models, not training resamples.",
+  "diagnostics": "Measure score spans on all multi-candidate impressions. Average each full-model impression's predictions into a common score as a label-free diagnostic; this is not a deployable context-only trained model. Report ad-only controls and raw/transformed candidate feature collisions.",
+  "examples": "Seed 42, outer eligible impressions with 3..8 candidates, nonzero full score span. Show largest positive and largest negative tie-averaged NDCG change vs context, ties by impression ID. Label selected extremes as illustrative, never representative.",
+  "test_policy": "Do not read original test. This is a prespecified follow-up analysis of already-used development data, not a fresh independent holdout or causal/online CTR experiment.",
+  "deployment_policy": "Diagnostic models only. Do not change the existing champion, serving configuration or registry aliases."
+}

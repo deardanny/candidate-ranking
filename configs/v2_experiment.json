@@ -1,0 +1,30 @@
+{
+  "experiment_name": "fairjob-v2-factorial",
+  "development_split_salt": "fairjob-v2-development-v1",
+  "inner_train_percent": 80,
+  "seeds": [42, 43, 44],
+  "representative_seed": 42,
+  "embedding_dim": 8,
+  "hidden_dims": [128, 64],
+  "cross_layers": 2,
+  "dropout": 0.1,
+  "pairwise_weight": 0.1,
+  "pair_groups_per_batch": 128,
+  "batch_size": 2048,
+  "max_epochs": 5,
+  "patience": 2,
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "num_threads": 4,
+  "bootstrap_repeats": 1000,
+  "fallback_alpha": 100,
+  "checkpoint_rule": "Minimum inner validation LogLoss for every architecture/objective",
+  "family_selection": "Among three challenger families, highest mean inner NDCG across all seeds subject to mean LogLoss <= 1.005 * MLP-BCE; ties use family name. If none qualify, diagnose best challenger but block promotion.",
+  "quality_gate": {
+    "comparison": "Representative seed 42 vs freshly fitted LightGBM on outer validation",
+    "max_logloss_ratio": 1.005,
+    "min_ndcg_difference": 0.0,
+    "min_ndcg_ci_lower": -0.01
+  },
+  "test_policy": "Never read original test. Inner split and outer validation are development evidence, not a new independent holdout."
+}

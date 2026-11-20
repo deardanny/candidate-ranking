@@ -1,0 +1,11 @@
+{
+  "name": "pytorch-cpu-final-v1",
+  "uvicorn_workers": 1,
+  "environment": {
+    "FAIRJOB_TORCH_THREADS": "1",
+    "FAIRJOB_MAX_WORKERS": "1",
+    "FAIRJOB_MAX_INFLIGHT": "2",
+    "FAIRJOB_BATCH_CANDIDATES": "1"
+  },
+  "selection": "Fixed before test: one process/thread and batched candidates; validation 50 RPS had 0 failures and lower p95 than serial or two-process settings."
+}

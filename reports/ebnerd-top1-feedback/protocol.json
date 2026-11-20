@@ -1,0 +1,71 @@
+{
+  "created_at_utc": "2026-11-19T08:09:42.092518+00:00",
+  "status": "specified before new development fits and before opening large-user labels",
+  "decision": "One bounded EB-NeRD experiment before changing datasets. Test missing response information and objective alignment; no further article-snapshot tuning.",
+  "hypothesis": "Past click/exposure response, rather than exposure frequency alone, can improve Top1 on full slates and model-unseen items after feedback arrives.",
+  "data": "Official small reference stream; independent large users excluded from the union of all small behavior and history users.",
+  "new_users": "Stable SHA256('ebnerd-top1-feedback-v1:'+user_id) modulo 20 == 0. Select from large validation history IDs without inspecting outcome labels.",
+  "new_holdout": "2023-05-25 07:00:00 through 2023-06-01 07:00:00; new users, SAME calendar period as the old audit. Not a new temporal replication.",
+  "large_labels_policy": "Never feed evaluation-user labels into features or train models. Freeze model bundles and selection before final evaluation; evaluate once.",
+  "feature_allowlist": "Candidate IDs, request timestamp/device, strictly past fixed user click history, reference-stream candidate exposures and past click flags. No article file, title, category, publication/modification time, read duration, scroll depth, row position, numeric item ID as model feature, or current/future labels.",
+  "availability": "Reference request time + 3600 seconds strictly less than scoring time. Feedback completion/ingestion timestamps absent: one-hour maturity is a replay assumption, NOT a production certificate. Predeclare 24-hour sensitivity.",
+  "folds": [
+    {
+      "name": "early",
+      "fit_end": "2023-05-21 07:00:00",
+      "end": "2023-05-23 07:00:00"
+    },
+    {
+      "name": "late",
+      "fit_end": "2023-05-23 07:00:00",
+      "end": "2023-05-25 05:00:00"
+    }
+  ],
+  "arms": [
+    "exposure_ndcg",
+    "exposure_top1",
+    "feedback_ndcg",
+    "feedback_top1"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "fixed_params": {
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 200,
+    "lambda_l2": 10,
+    "max_bin": 127,
+    "max_rounds": 180,
+    "early_stopping_rounds": 25
+  },
+  "selection": "Among the two feedback arms, highest mean development Hit1 averaged over both folds and all seeds; no final-label selection. Final ensemble mean of 3 seeds; each seed uses its late-fold selected rounds.",
+  "comparators": [
+    "exposure_ndcg",
+    "exposure_top1",
+    "past smoothed CTR at 1h and 24h (fixed prior strength 20)",
+    "uniform tie expectation"
+  ],
+  "primary": "Expected Hit1 on all recorded inview candidates (ties uniform); no negative sampling or cold-only candidate filtering.",
+  "cold_definitions": [
+    "model_cold: ID absent from all fitted candidate rows and original training history",
+    "cold_target: request has at least one clicked model-cold candidate; compete against ALL candidates",
+    "all_cold: all candidate IDs model-cold",
+    "zero_feedback_target: clicked model-cold item has zero available reference exposures; cold priors cannot infer unobserved relevance",
+    "adapted_cold_target: clicked model-cold item has available reference exposure history",
+    "zero_signal_target: clicked model-cold item also absent from available reference exposures, reference fixed click history and that user fixed click history; log-sample novelty, not global publication novelty"
+  ],
+  "uncertainty": "Paired user-cluster bootstrap, 2000 draws, seed 20261119; confidence intervals are conditional on this reference feed and calendar week.",
+  "success_gate": "Selected model improves overall and cold_target Hit1 over exposure_top1 and both fixed CTR baselines, each paired 95% CI lower > 0; both dev folds positive vs exposure_top1. Zero-feedback results reported separately; no zero-shot claim from adapted cold performance.",
+  "deployment": "No promotion of existing model registry; new model remains a replay candidate. If feedback timing not observed, never call it certified leakage-free production performance.",
+  "stop_rule": "No test-driven tuning. If gate fails or only adapted cold improves, record the boundary and specify required at-request/versioned content data; do not keep optimizing this holdout.",
+  "amendment_utc": "2026-11-19T08:15:08.963862+00:00",
+  "amendment_reason": "Before any fresh labels: enforce 1h feedback maturity plus 1h model build budget on fit and selection labels; draft fits excluded and archived.",
+  "fit_label_embargo_seconds": 7200,
+  "final_fit_labels_before": "2023-05-25 05:00:00",
+  "latency_sensitivity": "24h delays reference online features only; fixed model was trained under 1h maturity. Not a full-system 24h availability certificate.",
+  "top1_early_stopping": "Custom uniform-tie expected Hit1; metric=None disables built-in position-dependent tie breaking. ndcg arms retain built-in ndcg5 stopping; final arm selection uses expected Hit1.",
+  "tie_metric_correction_utc": "2026-11-19T08:17:04.166601+00:00"
+}

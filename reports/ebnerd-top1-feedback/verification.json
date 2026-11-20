@@ -1,0 +1,36 @@
+{
+  "verified_utc": "2026-11-19T08:30:48.922903+00:00",
+  "independent_reconstruction": [
+    {
+      "source": "train",
+      "delay": 3600,
+      "requests": 1002,
+      "all_18_response_features_exact": true
+    },
+    {
+      "source": "fresh",
+      "delay": 3600,
+      "requests": 1001,
+      "all_18_response_features_exact": true
+    },
+    {
+      "source": "fresh",
+      "delay": 86400,
+      "requests": 1001,
+      "all_18_response_features_exact": true
+    },
+    {
+      "source": "fresh",
+      "delay": "frozen",
+      "requests": 1001,
+      "all_18_response_features_exact": true
+    }
+  ],
+  "response_feature_values_checked": 835524,
+  "max_absolute_error": 0.0,
+  "independent_query_metrics_checked": 15000,
+  "reloaded_single_thread_predictions_exact": 90000,
+  "fit_label_embargo_verified": true,
+  "release_sha256": "5b783e5b38be6b28c8ee9ce151de8127600561b68e685ab8f500a2bfba49dcae",
+  "scope": "Event-time calculations and artifact boundaries verified; source ingestion timestamps unavailable."
+}

@@ -1,0 +1,1491 @@
+{
+  "evaluated_utc": "2026-11-19T08:30:27.289130+00:00",
+  "selection": "feedback_ndcg",
+  "new_users_same_calendar_period": true,
+  "predictions_frozen_sha256": "488166f82276cc4f3c5fedf15cdd81761cd7a32ef3968a20db22b56000c73f4c",
+  "protocol_sha256": "09b6fd59d860b8e7af22f18d558e855dbfa725e893d86fcc669c053098f10dbb",
+  "cohort": {
+    "requests": 618829,
+    "users": 38920,
+    "candidates": 7417634,
+    "start": "2023-05-25 07:00:00",
+    "end": "2023-06-01 06:59:59",
+    "fresh_labels_loaded": false,
+    "reference_users_disjoint": true,
+    "fixed_global_history": "small validation history only",
+    "personal_history": "selected new users, strictly before 2023-05-25 07:00",
+    "article_tables_loaded": false,
+    "fresh_user_feedback_used": false
+  },
+  "positive_requests": 618829,
+  "model_cold_unique_items": 1899,
+  "metrics": {
+    "d3600_exposure_ndcg": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.24850935873209393
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.2562081397590249
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.25097987953253115
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.07199727621847239
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.29234713528966166
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.07196592199398666
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.11669829222011385
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.12789806647064064
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.294534277399336
+      }
+    },
+    "d3600_exposure_top1": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.24065018739096716
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.24838544286779918
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.2457156716772856
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.07602688455565779
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.282184513783631
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.07597817791489464
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.1879348513598988
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.1906070866375598
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.28337392215828683
+      }
+    },
+    "d3600_feedback_ndcg": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.2937543743628704
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.3012584462666044
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.28722489478452107
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.06909738742924286
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.34684118610077364
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.0690827741708972
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.1521821631878558
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.2181234963913392
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.34885275071286687
+      }
+    },
+    "d3600_feedback_top1": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.29585554011558607
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.30403658032371494
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.28634882213913887
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.09175589836976823
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.3456674700550635
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.09178016390634262
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.12428842504743833
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.1665330125634857
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.3482100943177695
+      }
+    },
+    "d3600_ctr_1h": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.23757420960012868
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.2420457874927776
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.22393992535817028
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.15557367429501687
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.25880336768359197
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.1556482036076686
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.17080925715650572
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.34360719695523223
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.25860816993188834
+      }
+    },
+    "d3600_ctr_24h": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.2133599129664684
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.21678903426164398
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.20707938813699037
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.16149888128749587
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.22739849944953788
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.1615756896809177
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.1783910028407182
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.3620689655172414
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.2266127395611897
+      }
+    },
+    "d86400_exposure_top1": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.1696308699919397
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.1723196105851541
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.15467582966402607
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.2023739224043536
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.166059930373225
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.20247489769090032
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.17855848211250014
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.17983585297438856
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.16587383740095843
+      }
+    },
+    "d86400_feedback_ndcg": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.14696284605029775
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.1460959629105287
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.1466773668427252
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.1910852311629625
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.13691555749349582
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.19117396211638746
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.17135437585621463
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.1688909174856563
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.13647365404303327
+      }
+    },
+    "d86400_ctr_1h": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.1334976372431197
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.13418934828894197
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.14862970635043074
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.16010268024485197
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.1288165746804073
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.16010361401702888
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.15306637660577233
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.1522130430089656
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.128496129093154
+      }
+    },
+    "d86400_ctr_24h": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.13680150981841638
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.13738555876514327
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.1479296596042682
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.16837742241585618
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.13099904555111883
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.16838437011538152
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.15548544635163183
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.15846956974435417
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.13064590870969364
+      }
+    },
+    "dfrozen_exposure_ndcg": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.15213496094173223
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.15295402391434124
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.15009495500269845
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.19371905090662866
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.1446006731486303
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.19379070419389266
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.17721319139547193
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.17364860542365387
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.14419048591565875
+      }
+    },
+    "dfrozen_exposure_top1": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.15558232387523172
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.15868503581826693
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.15007005251430397
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.19485583862453132
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.15123411121337466
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.19489627341235682
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.17878928089036686
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.1753351419774797
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.15088866192908376
+      }
+    },
+    "dfrozen_feedback_ndcg": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.15329730335319408
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.15357973617389237
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.15011163220147042
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.1943064758254289
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.14523292477722805
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.19436866714479814
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.1776554507462573
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.1748721782653868
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.14481917981368805
+      }
+    },
+    "dfrozen_ctr_1h": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.11718416958259707
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.11775136461981378
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.1496410518927585
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.15314322725520735
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.11052459292215544
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.1531746568604566
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.1413359760670847
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.14172746434353142
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.11011026328123268
+      }
+    },
+    "dfrozen_ctr_24h": {
+      "overall": {
+        "requests": 618829,
+        "users": 38920,
+        "hit1": 0.12101873007450187
+      },
+      "cold_target": {
+        "requests": 591430,
+        "users": 38642,
+        "hit1": 0.11818257241843379
+      },
+      "all_cold": {
+        "requests": 216641,
+        "users": 33473,
+        "hit1": 0.1496410518927585
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "users": 26657,
+        "hit1": 0.15451781163181688
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "users": 37141,
+        "hit1": 0.1107677666624443
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "users": 26643,
+        "hit1": 0.15454121735383705
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "users": 6094,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "users": 2409,
+        "hit1": 0.14372236276394132
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "users": 3337,
+        "hit1": 0.1431878885947176
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "users": 37053,
+        "hit1": 0.11033250642860909
+      }
+    },
+    "uniform": {
+      "overall": {
+        "requests": 618829,
+        "hit1": 0.11718416958259707
+      },
+      "cold_target": {
+        "requests": 591430,
+        "hit1": 0.11775136461981378
+      },
+      "all_cold": {
+        "requests": 216641,
+        "hit1": 0.1496410518927585
+      },
+      "zero_feedback_target": {
+        "requests": 98112,
+        "hit1": 0.15314322725520735
+      },
+      "adapted_cold_target": {
+        "requests": 494157,
+        "hit1": 0.11052459292215544
+      },
+      "zero_signal_target": {
+        "requests": 97988,
+        "hit1": 0.1531746568604566
+      },
+      "all_candidates_zero_signal": {
+        "requests": 7642,
+        "hit1": 0.18692101502556882
+      },
+      "cold_1to4_exposures": {
+        "requests": 2635,
+        "hit1": 0.1413359760670847
+      },
+      "cold_5to19_exposures": {
+        "requests": 3741,
+        "hit1": 0.14172746434353142
+      },
+      "cold_20plus_exposures": {
+        "requests": 487819,
+        "hit1": 0.11011026328123268
+      }
+    }
+  },
+  "paired_user_bootstrap": {
+    "d3600_feedback_ndcg-minus-d3600_exposure_top1": {
+      "overall": {
+        "estimate": 0.05310418697190326,
+        "lower": 0.05179106379932211,
+        "upper": 0.05435021659067452,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.05287300339880527,
+        "lower": 0.05157751083970786,
+        "upper": 0.054127024971719305,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 0.04150922310723549,
+        "lower": 0.039488544637522,
+        "upper": 0.043435969812035895,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": -0.0069294971264149356,
+        "lower": -0.007359058539050046,
+        "upper": -0.006525780974099178,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.06465667231714257,
+        "lower": 0.06308029047979835,
+        "upper": 0.0662171669428689,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": -0.006895403743997449,
+        "lower": -0.007317411690495493,
+        "upper": -0.006497543275161396,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "d3600_feedback_ndcg-minus-d3600_ctr_1h": {
+      "overall": {
+        "estimate": 0.056180164762741715,
+        "lower": 0.055037811996205936,
+        "upper": 0.057286963572378814,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.05921265877382685,
+        "lower": 0.058014924221903415,
+        "upper": 0.06034242545190585,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 0.06328496942635078,
+        "lower": 0.06150524390320851,
+        "upper": 0.06515918786594689,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": -0.08647628686577402,
+        "lower": -0.08814677036996572,
+        "upper": -0.08479014556990448,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.08803781841718167,
+        "lower": 0.08672682070475615,
+        "upper": 0.08931536914713291,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": -0.08656542943677141,
+        "lower": -0.08821261795260257,
+        "upper": -0.08493495936901616,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "d3600_feedback_ndcg-minus-d3600_ctr_24h": {
+      "overall": {
+        "estimate": 0.08039446139640202,
+        "lower": 0.07911545940315094,
+        "upper": 0.08172658576000892,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.08446941200496051,
+        "lower": 0.08311157348658565,
+        "upper": 0.08579395315620247,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 0.08014550664753073,
+        "lower": 0.07814580775129082,
+        "upper": 0.08231451182075912,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": -0.09240149385825301,
+        "lower": -0.09403412871258565,
+        "upper": -0.09079931760379795,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.11944268665123575,
+        "lower": 0.11791701272760523,
+        "upper": 0.12092024950249511,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": -0.09249291551002048,
+        "lower": -0.09418670006510783,
+        "upper": -0.09081306530867166,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "d3600_feedback_ndcg-minus-d3600_exposure_ndcg": {
+      "overall": {
+        "estimate": 0.04524501563077648,
+        "lower": 0.044016853245090616,
+        "upper": 0.04644632820248919,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.04505030650757956,
+        "lower": 0.043746400260922955,
+        "upper": 0.04625667615760119,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 0.03624501525198993,
+        "lower": 0.034295597194047,
+        "upper": 0.0380763737562325,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": -0.002899888789229543,
+        "lower": -0.0032334152754149126,
+        "upper": -0.0025656731833139405,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.05449405081111199,
+        "lower": 0.052969578765121185,
+        "upper": 0.05606763190585405,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": -0.002883147823089448,
+        "lower": -0.0032273992558097225,
+        "upper": -0.0025539676057788367,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "d86400_feedback_ndcg-minus-d86400_exposure_top1": {
+      "overall": {
+        "estimate": -0.022668023941641944,
+        "lower": -0.023621711618059968,
+        "upper": -0.02180898609669066,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": -0.0262236476746254,
+        "lower": -0.02714605012847091,
+        "upper": -0.025329177467986144,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": -0.00799846282130088,
+        "lower": -0.00846347162110459,
+        "upper": -0.007534409403405224,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": -0.01128869124139112,
+        "lower": -0.011768148165915603,
+        "upper": -0.010818540970427885,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": -0.02914437287972918,
+        "lower": -0.030278670438207665,
+        "upper": -0.028091969801740734,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": -0.011300935574512855,
+        "lower": -0.011801481648248666,
+        "upper": -0.010821093846068913,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "d86400_feedback_ndcg-minus-d86400_ctr_1h": {
+      "overall": {
+        "estimate": 0.013465208807178032,
+        "lower": 0.012837615490995071,
+        "upper": 0.014112626408268998,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.011906614621586724,
+        "lower": 0.01126739768644599,
+        "upper": 0.01252834186969325,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": -0.0019523395077055232,
+        "lower": -0.002249963219674704,
+        "upper": -0.001643338289038921,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": 0.03098255091811049,
+        "lower": 0.02981837674417196,
+        "upper": 0.032204515570561816,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.008098982813088509,
+        "lower": 0.0074316954785545,
+        "upper": 0.008792514382766388,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": 0.0310703480993586,
+        "lower": 0.029870428513290782,
+        "upper": 0.03228757838385624,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "d86400_feedback_ndcg-minus-d86400_ctr_24h": {
+      "overall": {
+        "estimate": 0.010161336231881337,
+        "lower": 0.009603889789581505,
+        "upper": 0.01071197128809739,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.0087104041453854,
+        "lower": 0.008173089764188892,
+        "upper": 0.00924734710882746,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": -0.0012522927615430078,
+        "lower": -0.0015886305839910347,
+        "upper": -0.0009248570523726923,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": 0.022707808747106293,
+        "lower": 0.021683323715605704,
+        "upper": 0.02377169661032122,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.005916511942377005,
+        "lower": 0.005347508309624149,
+        "upper": 0.006499754652319797,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": 0.022789592001005977,
+        "lower": 0.021765061160241277,
+        "upper": 0.023814917055453116,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "dfrozen_feedback_ndcg-minus-dfrozen_exposure_top1": {
+      "overall": {
+        "estimate": -0.0022850205220376284,
+        "lower": -0.0025724827653522474,
+        "upper": -0.0020149427744527285,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": -0.00510529964437453,
+        "lower": -0.005300201149021961,
+        "upper": -0.004913879213594841,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 4.1579687166473134e-05,
+        "lower": -3.5146721678113143e-06,
+        "upper": 8.765542900465652e-05,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": -0.0005493627991024142,
+        "lower": -0.0006651642628157428,
+        "upper": -0.0004381282106242017,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": -0.006001186436146593,
+        "lower": -0.006239595643535717,
+        "upper": -0.0057705853101097234,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": -0.0005276062675586405,
+        "lower": -0.0006313147082650844,
+        "upper": -0.00043001027999966965,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "dfrozen_feedback_ndcg-minus-dfrozen_ctr_1h": {
+      "overall": {
+        "estimate": 0.036113133770597,
+        "lower": 0.035302233778494466,
+        "upper": 0.03698897644830151,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.03582837155407859,
+        "lower": 0.03493275071316924,
+        "upper": 0.03668390727464555,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 0.0004705803087119197,
+        "lower": 0.000357234415781215,
+        "upper": 0.000587533716512797,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": 0.04116324857022157,
+        "lower": 0.04001930803010067,
+        "upper": 0.0423850888992168,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.03470833185507262,
+        "lower": 0.03377338095338554,
+        "upper": 0.035664521152731415,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": 0.04119401028434156,
+        "lower": 0.04004796574728118,
+        "upper": 0.04245025363088453,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "dfrozen_feedback_ndcg-minus-dfrozen_ctr_24h": {
+      "overall": {
+        "estimate": 0.03227857327869221,
+        "lower": 0.031477300818564855,
+        "upper": 0.03312810914096445,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.035397163755458566,
+        "lower": 0.034570072074819075,
+        "upper": 0.036210714121315345,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 0.0004705803087119197,
+        "lower": 0.000357234415781215,
+        "upper": 0.000587533716512797,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": 0.039788664193612,
+        "lower": 0.03864734320435542,
+        "upper": 0.040981342898834296,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.03446515811478376,
+        "lower": 0.03357692551970297,
+        "upper": 0.035367317615743195,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": 0.039827449790961124,
+        "lower": 0.03873603612076884,
+        "upper": 0.04100766014226186,
+        "users": 26643,
+        "requests": 97988
+      }
+    },
+    "dfrozen_feedback_ndcg-minus-dfrozen_exposure_ndcg": {
+      "overall": {
+        "estimate": 0.0011623424114618351,
+        "lower": 0.0009103808397530747,
+        "upper": 0.001412968009214307,
+        "users": 38920,
+        "requests": 618829
+      },
+      "cold_target": {
+        "estimate": 0.0006257122595511312,
+        "lower": 0.00045805586383534903,
+        "upper": 0.0007894114551026038,
+        "users": 38642,
+        "requests": 591430
+      },
+      "all_cold": {
+        "estimate": 1.6677198771963617e-05,
+        "lower": -1.714797531825641e-05,
+        "upper": 4.892914479672272e-05,
+        "users": 33473,
+        "requests": 216641
+      },
+      "zero_feedback_target": {
+        "estimate": 0.0005874249188002362,
+        "lower": 0.0004833384846955771,
+        "upper": 0.000695650337957208,
+        "users": 26657,
+        "requests": 98112
+      },
+      "adapted_cold_target": {
+        "estimate": 0.0006322516285977873,
+        "lower": 0.0004277658499146428,
+        "upper": 0.0008347291755612209,
+        "users": 37141,
+        "requests": 494157
+      },
+      "zero_signal_target": {
+        "estimate": 0.0005779629509055066,
+        "lower": 0.00047985382001163225,
+        "upper": 0.000672492018020685,
+        "users": 26643,
+        "requests": 97988
+      }
+    }
+  },
+  "development_selected_minus_exposure_top1": {
+    "early": 0.06411834942109854,
+    "late": 0.07171154604772384
+  },
+  "predeclared_success_gate_passed": true,
+  "also_beats_exposure_ndcg_overall_and_cold": true,
+  "daily_hit1": {
+    "2023-05-25": {
+      "d3600_exposure_ndcg": 0.28228261678417943,
+      "d3600_exposure_top1": 0.27385095560557854,
+      "d3600_feedback_ndcg": 0.31452128253306794,
+      "d3600_feedback_top1": 0.31271620886276114,
+      "d3600_ctr_1h": 0.2460254648364325,
+      "d3600_ctr_24h": 0.22378151864145474,
+      "d86400_exposure_top1": 0.18911737792722547,
+      "d86400_feedback_ndcg": 0.15998055804744143,
+      "d86400_ctr_1h": 0.12934048775660553,
+      "d86400_ctr_24h": 0.1340311123553174,
+      "dfrozen_exposure_ndcg": 0.19312935827877417,
+      "dfrozen_exposure_top1": 0.19313269509009534,
+      "dfrozen_feedback_ndcg": 0.180744584687386,
+      "dfrozen_ctr_1h": 0.12098008885882873,
+      "dfrozen_ctr_24h": 0.1541419966920118
+    },
+    "2023-05-26": {
+      "d3600_exposure_ndcg": 0.26944480464302617,
+      "d3600_exposure_top1": 0.2596948144002609,
+      "d3600_feedback_ndcg": 0.30321806896464176,
+      "d3600_feedback_top1": 0.30776556851955145,
+      "d3600_ctr_1h": 0.2456520730957532,
+      "d3600_ctr_24h": 0.20798052118405713,
+      "d86400_exposure_top1": 0.17950073675186243,
+      "d86400_feedback_ndcg": 0.14668249264427408,
+      "d86400_ctr_1h": 0.1327434889865209,
+      "d86400_ctr_24h": 0.13924501239751236,
+      "dfrozen_exposure_ndcg": 0.16570199960341353,
+      "dfrozen_exposure_top1": 0.17315073868364148,
+      "dfrozen_feedback_ndcg": 0.1704163738825042,
+      "dfrozen_ctr_1h": 0.12013796182467619,
+      "dfrozen_ctr_24h": 0.12390742652694353
+    },
+    "2023-05-27": {
+      "d3600_exposure_ndcg": 0.26590661325277465,
+      "d3600_exposure_top1": 0.24289256448184665,
+      "d3600_feedback_ndcg": 0.2946072296390809,
+      "d3600_feedback_top1": 0.29878064340597993,
+      "d3600_ctr_1h": 0.22676985609975722,
+      "d3600_ctr_24h": 0.20501235973333234,
+      "d86400_exposure_top1": 0.17258384176476518,
+      "d86400_feedback_ndcg": 0.15126659542094267,
+      "d86400_ctr_1h": 0.13584862626965946,
+      "d86400_ctr_24h": 0.13761520220448678,
+      "dfrozen_exposure_ndcg": 0.15480372259770125,
+      "dfrozen_exposure_top1": 0.1578165344322959,
+      "dfrozen_feedback_ndcg": 0.15656770076479368,
+      "dfrozen_ctr_1h": 0.11821049981380749,
+      "dfrozen_ctr_24h": 0.11821049981380749
+    },
+    "2023-05-28": {
+      "d3600_exposure_ndcg": 0.22045358904025739,
+      "d3600_exposure_top1": 0.21166932458751672,
+      "d3600_feedback_ndcg": 0.2687100457931161,
+      "d3600_feedback_top1": 0.27092261460712413,
+      "d3600_ctr_1h": 0.21875411431548636,
+      "d3600_ctr_24h": 0.20101460937381088,
+      "d86400_exposure_top1": 0.1592316182589037,
+      "d86400_feedback_ndcg": 0.14351467834044326,
+      "d86400_ctr_1h": 0.12971905776125947,
+      "d86400_ctr_24h": 0.13127545588393422,
+      "dfrozen_exposure_ndcg": 0.14149598840858527,
+      "dfrozen_exposure_top1": 0.14436151909189365,
+      "dfrozen_feedback_ndcg": 0.1435606841672413,
+      "dfrozen_ctr_1h": 0.11375418935606815,
+      "dfrozen_ctr_24h": 0.11375418935606815
+    },
+    "2023-05-29": {
+      "d3600_exposure_ndcg": 0.237916654969082,
+      "d3600_exposure_top1": 0.22758039120082485,
+      "d3600_feedback_ndcg": 0.29074346728887424,
+      "d3600_feedback_top1": 0.29471414742284013,
+      "d3600_ctr_1h": 0.23962438666469402,
+      "d3600_ctr_24h": 0.21106301389931667,
+      "d86400_exposure_top1": 0.15770078730890122,
+      "d86400_feedback_ndcg": 0.1457606649803153,
+      "d86400_ctr_1h": 0.13544571556832766,
+      "d86400_ctr_24h": 0.13582122548218223,
+      "dfrozen_exposure_ndcg": 0.1387095149438119,
+      "dfrozen_exposure_top1": 0.14243752652011413,
+      "dfrozen_feedback_ndcg": 0.14160075412865028,
+      "dfrozen_ctr_1h": 0.11491593033826493,
+      "dfrozen_ctr_24h": 0.11491593033826493
+    },
+    "2023-05-30": {
+      "d3600_exposure_ndcg": 0.2198304621254292,
+      "d3600_exposure_top1": 0.2237375047153932,
+      "d3600_feedback_ndcg": 0.28629184306823224,
+      "d3600_feedback_top1": 0.2837648383891365,
+      "d3600_ctr_1h": 0.24143361283818235,
+      "d3600_ctr_24h": 0.21739867930843315,
+      "d86400_exposure_top1": 0.1623411361529628,
+      "d86400_feedback_ndcg": 0.1418035031324857,
+      "d86400_ctr_1h": 0.13132397665990297,
+      "d86400_ctr_24h": 0.13498774152282486,
+      "dfrozen_exposure_ndcg": 0.14084690547003167,
+      "dfrozen_exposure_top1": 0.14421992862799876,
+      "dfrozen_feedback_ndcg": 0.14327360646217244,
+      "dfrozen_ctr_1h": 0.11627273840291628,
+      "dfrozen_ctr_24h": 0.11627273840291628
+    },
+    "2023-05-31": {
+      "d3600_exposure_ndcg": 0.25082112202010975,
+      "d3600_exposure_top1": 0.24815875552849448,
+      "d3600_feedback_ndcg": 0.30057879003137394,
+      "d3600_feedback_top1": 0.3039242247422855,
+      "d3600_ctr_1h": 0.24374341827358803,
+      "d3600_ctr_24h": 0.22762548997205365,
+      "d86400_exposure_top1": 0.17116021354260538,
+      "d86400_feedback_ndcg": 0.14266487033564354,
+      "d86400_ctr_1h": 0.13835995046982488,
+      "d86400_ctr_24h": 0.1423866477550569,
+      "dfrozen_exposure_ndcg": 0.14515054414117,
+      "dfrozen_exposure_top1": 0.14775438617236858,
+      "dfrozen_feedback_ndcg": 0.14711639998855228,
+      "dfrozen_ctr_1h": 0.11780790845208464,
+      "dfrozen_ctr_24h": 0.11780790845208464
+    },
+    "2023-06-01": {
+      "d3600_exposure_ndcg": 0.28229486181690544,
+      "d3600_exposure_top1": 0.275658105571579,
+      "d3600_feedback_ndcg": 0.3103969234995193,
+      "d3600_feedback_top1": 0.3133734682354377,
+      "d3600_ctr_1h": 0.24121975159950715,
+      "d3600_ctr_24h": 0.21458525451108887,
+      "d86400_exposure_top1": 0.1818572823553728,
+      "d86400_feedback_ndcg": 0.15685091829395634,
+      "d86400_ctr_1h": 0.13581253069750737,
+      "d86400_ctr_24h": 0.1420692632895528,
+      "dfrozen_exposure_ndcg": 0.15149150146922635,
+      "dfrozen_exposure_top1": 0.1549246924624152,
+      "dfrozen_feedback_ndcg": 0.15421212910793936,
+      "dfrozen_ctr_1h": 0.11548009263626925,
+      "dfrozen_ctr_24h": 0.11548009263626925
+    }
+  },
+  "zero_signal_identical_candidate_rows": 7642,
+  "zero_signal_indistinguishability": {
+    "queries_with_multiple_identical_zero_signal_candidates": 292186,
+    "zero_signal_target_hit1_oracle_upper_bound": 0.345257052670969,
+    "scope": "For this 38-feature 1h representation under uniform tie evaluation. Every zero-signal candidate within a request has identical input. Bound assumes always choosing that tied group; it is not a deployable result or a bound on other feature sets."
+  },
+  "cold_metric_definition": "On cold_target requests, Top1 must itself be a clicked cold item; choosing a clicked warm item is NOT credited. All warm and cold candidates still compete. Analogous rules apply to zero-feedback/adapted/zero-signal targets.",
+  "frozen_control": "Same frozen models, but no reference request from 2023-05-25 05:00 or later can update features. All evaluation-week reference click labels are excluded from this control. This is a feature-staleness intervention, not a separately optimized frozen model.",
+  "limits": [
+    "Feedback mature by one hour is an unobserved availability assumption; 24h delays only online features while keeping the same 1h-maturity trained model, not a full-system 24h availability guarantee.",
+    "Fresh users are disjoint, but dates and reference feed were previously explored; confidence intervals condition on this feed and week.",
+    "Cold means absent from model fitting candidates and original history, not newly published globally.",
+    "An observed clicked item ranked first is not causal CTR/revenue lift; data contains clicked requests and logging-policy bias.",
+    "Cold subgroups based on positive item status can overlap when multiple positives occur. All original candidates compete."
+  ]
+}

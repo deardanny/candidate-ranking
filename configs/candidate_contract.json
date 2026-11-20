@@ -1,0 +1,16 @@
+{
+  "name": "candidate-contract-v1",
+  "seeds": [42, 43, 44],
+  "policies": ["ad_mean_preserved", "full_rank_graft"],
+  "parent_models": "models/context-residual-v1",
+  "parent_predictions": "reports/context-residual/outer_predictions.parquet",
+  "data": "data/processed/fairjob-v1/validation.parquet",
+  "example_impression": 36240,
+  "normalization_iterations": 60,
+  "comparison_tolerance": 1e-12,
+  "chunk_rule": "Sort candidates by product_id within each impression; alternate between two chunks. Deliberately normalize each chunk independently, then merge. This is an injected misuse, not an observed production bug.",
+  "removal_rule": "Remove the largest product_id from each multi-candidate impression. Do not inspect labels to choose the removed candidate. Recompute normalization on retained candidates.",
+  "correct_assembly_rule": "Gather the raw scores from both chunks into their original row positions, then normalize once per complete impression.",
+  "comparison": "Compare exact mean-probability preservation with raw-score mean centering at the existing frozen alpha; do not select a new policy or tune alpha.",
+  "scope": "Engineering sensitivity audit on previously used development validation. No model training, no original test access, no online lift estimate or production promotion. Candidate removal is not a counterfactual click experiment. No uncertainty-adjusted model-quality conclusion."
+}

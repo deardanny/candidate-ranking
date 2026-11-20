@@ -1,0 +1,47 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "ranking-feedback-v1",
+      "default": "ranking-feedback-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request_id": {
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "request_snapshot_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Request Snapshot Sha256",
+      "type": "string"
+    },
+    "attribution_window_closed_at": {
+      "format": "date-time",
+      "title": "Attribution Window Closed At",
+      "type": "string"
+    },
+    "received_at": {
+      "format": "date-time",
+      "title": "Received At",
+      "type": "string"
+    },
+    "clicked_item_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Clicked Item Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "request_id",
+    "request_snapshot_sha256",
+    "attribution_window_closed_at",
+    "received_at",
+    "clicked_item_ids"
+  ],
+  "title": "ClosedFeedback",
+  "type": "object"
+}

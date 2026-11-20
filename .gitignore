@@ -1,0 +1,25 @@
+# Source datasets, derived records and service state stay local.
+data/
+models/
+runs/
+mlruns/
+.tools/
+.venv/
+.env
+.env.*
+*.secret
+*.pem
+__pycache__/
+.pytest_cache/
+.matplotlib/
+*.egg-info/
+build/
+.DS_Store
+*.part
+*.parquet
+*.jsonl
+*.log
+*.npy
+*.npz
+*.pt
+*.pkl

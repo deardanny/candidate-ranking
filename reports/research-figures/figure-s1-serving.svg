@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="936pt" height="464.4pt" viewBox="0 0 936 464.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>Serving validation of the earlier snapshot model</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Serving validation of the earlier snapshot model</dc:title>
+    <dc:date>2026-11-20T17:20:37.686164</dc:date>
+    <dc:description>Response-time quantiles and request accounting at 50 and 100 requests per second, for the previous serving model.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 464.4 
+L 936 464.4 
+L 936 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 91.728 314.8632 
+L 421.2 314.8632 
+L 421.2 130.032 
+L 91.728 130.032 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m7bae8f65f1" d="M 0 0 
+L 0 3 
+" style="stroke: #202020; stroke-width: 0.7"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7bae8f65f1" x="114.930254" y="314.8632" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #202020" x="114.930254" y="329.371501" transform="rotate(-0 114.930254 329.371501)">p50</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m7bae8f65f1" x="207.739268" y="314.8632" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #202020" x="207.739268" y="329.371501" transform="rotate(-0 207.739268 329.371501)">p95</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m7bae8f65f1" x="300.548282" y="314.8632" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #202020" x="300.548282" y="329.371501" transform="rotate(-0 300.548282 329.371501)">p99</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m7bae8f65f1" x="393.357296" y="314.8632" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #202020" x="393.357296" y="329.371501" transform="rotate(-0 393.357296 329.371501)">max</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 12px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #202020" x="256.464" y="348.42277" transform="rotate(-0 256.464 348.42277)">Empirical response-time quantile</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <defs>
+       <path id="mfb6def5dfd" d="M 0 0 
+L -3 0 
+" style="stroke: #202020; stroke-width: 0.7"/>
+      </defs>
+      <g>
+       <use xlink:href="#mfb6def5dfd" x="91.728" y="314.8632" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="85.228" y="318.86735" transform="rotate(-0 85.228 318.86735)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mfb6def5dfd" x="91.728" y="281.857629" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="85.228" y="285.861779" transform="rotate(-0 85.228 285.861779)">10</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#mfb6def5dfd" x="91.728" y="248.852057" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="85.228" y="252.856208" transform="rotate(-0 85.228 252.856208)">20</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mfb6def5dfd" x="91.728" y="215.846486" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="85.228" y="219.850636" transform="rotate(-0 85.228 219.850636)">30</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#mfb6def5dfd" x="91.728" y="182.840914" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="85.228" y="186.845065" transform="rotate(-0 85.228 186.845065)">40</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mfb6def5dfd" x="91.728" y="149.835343" style="fill: #202020; stroke: #202020; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="85.228" y="153.839493" transform="rotate(-0 85.228 153.839493)">50</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 12px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #202020" x="62.468313" y="222.4476" transform="rotate(-90 62.468313 222.4476)">Response time (ms)</text>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 111.217893 299.997903 
+L 204.026907 292.818904 
+L 296.835921 265.70945 
+L 389.644935 228.812038 
+" clip-path="url(#pa134f3fe3f)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #202020"/>
+    <defs>
+     <path id="m80d313d322" d="M 0 2.6 
+C 0.689528 2.6 1.350908 2.326048 1.838478 1.838478 
+C 2.326048 1.350908 2.6 0.689528 2.6 0 
+C 2.6 -0.689528 2.326048 -1.350908 1.838478 -1.838478 
+C 1.350908 -2.326048 0.689528 -2.6 0 -2.6 
+C -0.689528 -2.6 -1.350908 -2.326048 -1.838478 -1.838478 
+C -2.326048 -1.350908 -2.6 -0.689528 -2.6 0 
+C -2.6 0.689528 -2.326048 1.350908 -1.838478 1.838478 
+C -1.350908 2.326048 -0.689528 2.6 0 2.6 
+z
+" style="stroke: #202020"/>
+    </defs>
+    <g clip-path="url(#pa134f3fe3f)">
+     <use xlink:href="#m80d313d322" x="111.217893" y="299.997903" style="fill: #ffffff; stroke: #202020"/>
+     <use xlink:href="#m80d313d322" x="204.026907" y="292.818904" style="fill: #ffffff; stroke: #202020"/>
+     <use xlink:href="#m80d313d322" x="296.835921" y="265.70945" style="fill: #ffffff; stroke: #202020"/>
+     <use xlink:href="#m80d313d322" x="389.644935" y="228.812038" style="fill: #ffffff; stroke: #202020"/>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <path d="M 118.642614 304.033935 
+L 211.451628 298.375115 
+L 304.260642 274.494554 
+L 397.069656 240.827026 
+" clip-path="url(#pa134f3fe3f)" style="fill: none; stroke: #285b72; stroke-linecap: square"/>
+    <defs>
+     <path id="m3b7622779b" d="M -2.6 2.6 
+L 2.6 2.6 
+L 2.6 -2.6 
+L -2.6 -2.6 
+z
+" style="stroke: #285b72; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#pa134f3fe3f)">
+     <use xlink:href="#m3b7622779b" x="118.642614" y="304.033935" style="fill: #285b72; stroke: #285b72; stroke-linejoin: miter"/>
+     <use xlink:href="#m3b7622779b" x="211.451628" y="298.375115" style="fill: #285b72; stroke: #285b72; stroke-linejoin: miter"/>
+     <use xlink:href="#m3b7622779b" x="304.260642" y="274.494554" style="fill: #285b72; stroke: #285b72; stroke-linejoin: miter"/>
+     <use xlink:href="#m3b7622779b" x="397.069656" y="240.827026" style="fill: #285b72; stroke: #285b72; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 91.728 149.835343 
+L 421.2 149.835343 
+" clip-path="url(#pa134f3fe3f)" style="fill: none; stroke-dasharray: 3.2,2.4; stroke-dashoffset: 0; stroke: #575757; stroke-width: 0.8"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 91.728 314.8632 
+L 91.728 130.032 
+" style="fill: none; stroke: #202020; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 91.728 314.8632 
+L 421.2 314.8632 
+" style="fill: none; stroke: #202020; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="418.41573" y="145.544619" transform="rotate(-0 418.41573 145.544619)">50 ms deadline</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_14">
+     <path d="M 96.50592 112.413391 
+L 108.38592 112.413391 
+L 120.26592 112.413391 
+" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #202020"/>
+     <g>
+      <use xlink:href="#m80d313d322" x="108.38592" y="112.413391" style="fill: #ffffff; stroke: #202020"/>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 10.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="128.90592" y="116.193391" transform="rotate(-0 128.90592 116.193391)">50 requests/s</text>
+    </g>
+    <g id="line2d_15">
+     <path d="M 206.697983 112.413391 
+L 218.577983 112.413391 
+L 230.457983 112.413391 
+" style="fill: none; stroke: #285b72; stroke-linecap: square"/>
+     <g>
+      <use xlink:href="#m3b7622779b" x="218.577983" y="112.413391" style="fill: #285b72; stroke: #285b72; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 10.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="239.097983" y="116.193391" transform="rotate(-0 239.097983 116.193391)">100 requests/s</text>
+    </g>
+   </g>
+  </g>
+  <g id="line2d_16">
+   <path d="M 51.48 64.5516 
+L 893.88 64.5516 
+" style="fill: none; stroke: #202020; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_17">
+   <path d="M 514.8 131.8896 
+L 889.2 131.8896 
+" style="fill: none; stroke: #b4b4b4; stroke-width: 0.65; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_18">
+   <path d="M 514.8 301.86 
+L 889.2 301.86 
+" style="fill: none; stroke: #b4b4b4; stroke-width: 0.65; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_19">
+   <path d="M 51.48 360.8388 
+L 893.88 360.8388 
+" style="fill: none; stroke: #b4b4b4; stroke-width: 0.65; stroke-linecap: square"/>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 22px; font-family: 'Times New Roman'; text-anchor: start; fill: #202020" x="51.48" y="28.484102" transform="rotate(-0 51.48 28.484102)">Serving validation of the earlier snapshot model</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #575757" x="51.48" y="50.344762" transform="rotate(-0 51.48 50.344762)">Supplementary Figure S1  |  Local Mac benchmark  |  Separate model from Figure 1</text>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="51.48" y="88.867036" transform="rotate(-0 51.48 88.867036)">a</text>
+  </g>
+  <g id="text_19">
+   <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="74.88" y="88.349458" transform="rotate(-0 74.88 88.349458)">Observed response-time quantiles</text>
+  </g>
+  <g id="text_20">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="88.867036" transform="rotate(-0 514.8 88.867036)">b</text>
+  </g>
+  <g id="text_21">
+   <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="538.2" y="88.349331" transform="rotate(-0 538.2 88.349331)">Request accounting</text>
+  </g>
+  <g id="text_22">
+   <text style="font-weight: 700; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="122.66188" transform="rotate(-0 514.8 122.66188)">Measurement</text>
+  </g>
+  <g id="text_23">
+   <text style="font-weight: 700; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="743.184" y="122.66188" transform="rotate(-0 743.184 122.66188)">50 req/s</text>
+  </g>
+  <g id="text_24">
+   <text style="font-weight: 700; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="888.264" y="122.66188" transform="rotate(-0 888.264 122.66188)">100 req/s</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="154.370362" transform="rotate(-0 514.8 154.370362)">Duration (s)</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="743.184" y="154.370474" transform="rotate(-0 743.184 154.370474)">60</text>
+  </g>
+  <g id="text_27">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="888.264" y="154.370474" transform="rotate(-0 888.264 154.370474)">30</text>
+  </g>
+  <g id="text_28">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="181.305674" transform="rotate(-0 514.8 181.305674)">Issued requests</text>
+  </g>
+  <g id="text_29">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="743.184" y="181.305674" transform="rotate(-0 743.184 181.305674)">3,000</text>
+  </g>
+  <g id="text_30">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="888.264" y="181.305674" transform="rotate(-0 888.264 181.305674)">3,000</text>
+  </g>
+  <g id="text_31">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="208.240874" transform="rotate(-0 514.8 208.240874)">Successful responses</text>
+  </g>
+  <g id="text_32">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="743.184" y="208.240874" transform="rotate(-0 743.184 208.240874)">3,000</text>
+  </g>
+  <g id="text_33">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="888.264" y="208.240874" transform="rotate(-0 888.264 208.240874)">3,000</text>
+  </g>
+  <g id="text_34">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="235.176074" transform="rotate(-0 514.8 235.176074)">Successful within 50 ms</text>
+  </g>
+  <g id="text_35">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="743.184" y="235.176074" transform="rotate(-0 743.184 235.176074)">3,000</text>
+  </g>
+  <g id="text_36">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="888.264" y="235.176074" transform="rotate(-0 888.264 235.176074)">3,000</text>
+  </g>
+  <g id="text_37">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="262.111274" transform="rotate(-0 514.8 262.111274)">Generator drops</text>
+  </g>
+  <g id="text_38">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="743.184" y="262.111274" transform="rotate(-0 743.184 262.111274)">0</text>
+  </g>
+  <g id="text_39">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="888.264" y="262.111274" transform="rotate(-0 888.264 262.111274)">0</text>
+  </g>
+  <g id="text_40">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="289.046474" transform="rotate(-0 514.8 289.046474)">Invalid responses</text>
+  </g>
+  <g id="text_41">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="743.184" y="289.046474" transform="rotate(-0 743.184 289.046474)">0</text>
+  </g>
+  <g id="text_42">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #202020" x="888.264" y="289.046474" transform="rotate(-0 888.264 289.046474)">0</text>
+  </g>
+  <g id="text_43">
+   <text style="font-size: 11.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="514.8" y="322.483162" transform="rotate(-0 514.8 322.483162)">18 / 18 serving checks passed</text>
+  </g>
+  <g id="text_44">
+   <text style="font-size: 10.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #575757" x="514.8" y="338.478485" transform="rotate(-0 514.8 338.478485)">201 offline/API comparisons; max score error = 0</text>
+  </g>
+  <g id="text_45">
+   <text style="font-weight: 700; font-size: 10.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #202020" x="51.48" y="381.745216" transform="rotate(-0 51.48 381.745216)">Figure S1.  API measurements are independent of the latest offline ranking gains.</text>
+  </g>
+  <g id="text_46">
+   <text style="font-size: 10.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #575757" x="51.48" y="395.212816" transform="rotate(-0 51.48 395.212816)">FastAPI /rank, Redis cache and fallback, bounded concurrency, version pinning, promotion/rollback and shadow</text>
+  </g>
+  <g id="text_47">
+   <text style="font-size: 10.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #575757" x="51.48" y="408.680416" transform="rotate(-0 51.48 408.680416)">isolation were implemented and checked. Server and load generator ran on the same Mac; these short runs are</text>
+  </g>
+  <g id="text_48">
+   <text style="font-size: 10.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #575757" x="51.48" y="422.148016" transform="rotate(-0 51.48 422.148016)">not a sustained production capacity claim. The latest response model still needs a live feedback adapter and its own</text>
+  </g>
+  <g id="text_49">
+   <text style="font-size: 10.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #575757" x="51.48" y="435.615616" transform="rotate(-0 51.48 435.615616)">HTTP load validation before promotion. Real receipt-time logging and an online A/B experiment remain outstanding.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa134f3fe3f">
+   <rect x="91.728" y="130.032" width="329.472" height="184.8312"/>
+  </clipPath>
+ </defs>
+</svg>

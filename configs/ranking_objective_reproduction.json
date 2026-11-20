@@ -1,0 +1,22 @@
+{
+  "name": "ranking-objective-reproduction-v1",
+  "data_dir": "data/processed/fairjob-v1",
+  "parent_report": "reports/candidate-count-reproduction",
+  "parent_models": "models/candidate-count-reproduction-v1",
+  "baseline_config": "configs/lightgbm_baseline.json",
+  "seeds": [42, 43, 44],
+  "outer_folds": 3,
+  "variants": ["bce_top1", "rank_top1", "rank_user_top1"],
+  "primary_variant": "rank_top1",
+  "bootstrap_repeats": 4000,
+  "bootstrap_seed": 20261119,
+  "ranking_params": {"objective": "lambdarank", "label_gain": [0, 1], "lambdarank_truncation_level": 4, "lambdarank_norm": true},
+  "hypothesis": "Learning differences among ads inside each request and selecting checkpoints on top-1 observed click capture improves ad choice on other users. Secondary: downweight repeated informative requests from the same training user to reduce concentration.",
+  "training": "Reuse exact three outer/inner user splits and fit-only transformers from candidate-count reproduction. Reuse nine frozen full BCE/LogLoss models as baseline. Train 27 new models: BCE selected by top1; LambdaRank selected by top1; user-balanced LambdaRank selected by top1. Same 48 features, capacity, regularization, learning rate, sampling settings and 500-round/30-patience budget as baseline; no parameter search. Keep ALL training rows and queries, including singleton and single-label queries. Ranking receives no different-label pair signal from those queries. Ranker rows are shuffled with seed then stably sorted by impression to avoid original position as implicit initial tie order. BCE retains original ordering to allow exact trajectory checks.",
+  "checkpoint_selection": "Custom tie-expected observed top1 capture over ALL inner multi-candidate requests, including zero-click requests. Maximize, earliest exact tie, patience30. All inner display cohorts used for power. No built-in NDCG tie assumptions, no outer labels used. Freeze all27 models across all folds before any new outer predictions/metrics are produced.",
+  "user_weighting": "Only for rank_user_top1: let m_u be number of fit-only requests containing both labels for user u. Assign constant row weight (1/m_u)/mean_queries(1/m_u) to each informative request; assign weight1 to uninformative requests with zero ranking gradient. Thus informative query scalar weights sum equally per user, not necessarily equal realized gradients. No outer activity or click labels enter weighting.",
+  "primary_test": "Paired rank_top1 minus existing BCE/LogLoss top1 capture on randomized-display multi-candidate requests. Support requires pooled whole-user bootstrap 95% lower bound>0 and positive point differences in EACH of three outer folds. Additionally require pooled ALL-display multi-candidate lower bound>0 as broad improvement guardrail. No switching primary to a better secondary arm after observing outcomes.",
+  "secondary": "BCE selection-only control; user-balanced ranking; rank versus BCE selection-only; user-balanced versus plain rank; uniform baseline; top3; n>=11; per-seed signs; user-macro utility and benefit concentration. Descriptive 95% intervals without multiple-comparison adjustment. No n>=11 routing or outer-tuned configuration.",
+  "aggregation": "Average request outcomes over three independent seed fits, not scores or an ensemble. Every original-train user held out once. Paired whole-user bootstrap conditions on fixed fitted models; training sets overlap across folds. This is reused development data, NOT new independent test evidence.",
+  "limitations": "Original validation and original test are not read by this experiment. Raw ranking scores are not CTR probabilities; do not compute LogLoss from sigmoid(rank score), feed these scores to a probability API, or promote automatically. Offline captured historical clicks are not incremental clicks, online CTR, revenue, or a causal policy estimate. Public sampled logs and original position bias remain. LambdaRank is a specific tree experiment, not the first ranking-loss experiment in this project."
+}

@@ -1,0 +1,8 @@
+{
+  "max_inflight": 8,
+  "shadow_sample_rate": 0.2,
+  "basis": "Best worst-repeat 50ms success at 100 RPS across constant and burst; ties prefer smaller capacity",
+  "worst_100rps_on_time": 0.995,
+  "development_only": true,
+  "configuration": "configs/v2_load.json"
+}

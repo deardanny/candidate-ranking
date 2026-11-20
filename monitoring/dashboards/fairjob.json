@@ -1,0 +1,357 @@
+{
+  "uid": "fairjob-v2",
+  "title": "FairJob V2 \u2014 Ranking, shadow and release",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "tags": [
+    "fairjob",
+    "development"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "HTTP requests / second",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (status) (rate(fairjob_http_requests_total[1m]))",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "HTTP p95 (server response, seconds)",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(fairjob_http_duration_seconds_bucket[1m])))",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "Admitted / queued CPU work",
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "fairjob_inflight",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "type": "timeseries",
+      "title": "Degraded response reasons",
+      "gridPos": {
+        "x": 12,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (reason) (rate(fairjob_fallback_total[1m]))",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "Shadow submitted / dropped / compared / error",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (outcome) (rate(fairjob_shadow_total[1m]))",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "type": "timeseries",
+      "title": "Shadow top-1 agreement (not accuracy)",
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(fairjob_shadow_top1_total{agreement=\"true\"}[1m])) / sum(rate(fairjob_shadow_top1_total[1m]))",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "type": "timeseries",
+      "title": "Replay worst 50ms success across completed repeats",
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "fairjob_replay_worst_on_time_ratio",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "type": "timeseries",
+      "title": "Deployment decisions",
+      "gridPos": {
+        "x": 12,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "fairjob_deployments_total",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "type": "timeseries",
+      "title": "Scoring mean stage duration",
+      "gridPos": {
+        "x": 0,
+        "y": 32,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (stage) (rate(fairjob_stage_duration_seconds_sum[1m])) / sum by (stage) (rate(fairjob_stage_duration_seconds_count[1m]))",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "type": "timeseries",
+      "title": "Shadow backlog",
+      "gridPos": {
+        "x": 12,
+        "y": 32,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "fairjob-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "fairjob_shadow_pending",
+          "legendFormat": "{{status}}{{reason}}{{outcome}}{{stage}}{{capacity}} {{rps}} {{burst}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+name: fairjob-adsranking
+services:
+  redis:
+    image: redis:7.2.12-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    cpus: 0.5
+    mem_limit: 256m
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 1s
+      retries: 20
+  api:
+    image: fairjob-adsranking-api:local
+    build: .
+    ports:
+      - "127.0.0.1:${FAIRJOB_HTTP_PORT:-8000}:8000"
+    volumes:
+      - "${FAIRJOB_BUNDLE_DIR:-./models/pytorch-v1}:/model:ro"
+    environment:
+      FAIRJOB_MODEL_DIR: /model
+      FAIRJOB_REDIS_URL: redis://redis:6379/0
+      FAIRJOB_TORCH_THREADS: "1"
+      FAIRJOB_MAX_WORKERS: "1"
+      FAIRJOB_MAX_INFLIGHT: "2"
+    cpus: 2
+    mem_limit: 2g
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 30s
