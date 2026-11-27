@@ -1,0 +1,184 @@
+{
+  "generated_utc": "2026-11-21T02:49:38.534256+00:00",
+  "synthetic": true,
+  "human_participants": 0,
+  "real_clicks": 0,
+  "llm_respondent_calls": 0,
+  "unique_evaluation_personas": 3000,
+  "visits_per_person_per_experiment": 8,
+  "response_source": "Seeded probabilistic behavioral simulator; zero LLM respondent calls; no human traffic",
+  "comparison": "New synthetic-world models: historical popularity versus contextual LightGBM, not the FairJob/EB-NeRD trained artifacts",
+  "primary_metric": "Mean per-user fraction of scheduled visits with a simulated click; intention-to-treat",
+  "uncertainty": "Resample simulated users within arm, preserving all visits. Conditional on this invented world only.",
+  "limitations": [
+    "Preferences, examination, attrition and click probabilities are invented and not calibrated to people.",
+    "Training and evaluation share the simulator, so model compatibility can produce an apparent lift by construction.",
+    "Three experiments reuse the same 3000 personas; they are not 9000 independent users.",
+    "Simulated cold ads are new IDs from the same invented feature distribution, not real first-exposure evidence.",
+    "No bids, payment, conversion, advertiser revenue, real browser visibility or real human clicks are measured.",
+    "Synthetic feedback never updates the existing FairJob/EB-NeRD production or research artifacts."
+  ],
+  "integrity": {
+    "passed": true,
+    "errors": [],
+    "error_count": 0,
+    "client_failures": [],
+    "client_failure_count": 0,
+    "database_counts": {
+      "assignments": 9000,
+      "requests": 72000,
+      "feedback": 72000
+    },
+    "expected_visits_per_experiment": 24000,
+    "validated_closed_feedback": 72000,
+    "idempotent_request_and_feedback_retries": 90,
+    "offline_http_parity_requests": 120,
+    "missing_feedback_imputed_as_zero": false,
+    "users_per_arm": {
+      "B": 1520,
+      "A": 1480
+    },
+    "user_level_srm_binomial_p": 0.4764464688932014,
+    "srm_flag_at_0_001": false
+  },
+  "experiments": [
+    {
+      "experiment_id": "aa-check",
+      "response_model": "preferences",
+      "complete": true,
+      "arms": {
+        "A": {
+          "policy": "popularity",
+          "users": 1480,
+          "scheduled_visits": 11840,
+          "served_visits": 11840,
+          "closed_feedback": 11840,
+          "simulated_clicks": 2598,
+          "simulated_visit_click_rate": 0.21942567567567567,
+          "top1_click_per_scheduled_visit": 0.13631756756756758,
+          "cold_eligible_visits": 5920,
+          "cold_clicks": 230,
+          "cold_click_per_eligible_visit": 0.03885135135135135,
+          "cold_displayed_slots": 5379
+        },
+        "B": {
+          "policy": "popularity",
+          "users": 1520,
+          "scheduled_visits": 12160,
+          "served_visits": 12160,
+          "closed_feedback": 12160,
+          "simulated_clicks": 2653,
+          "simulated_visit_click_rate": 0.21817434210526315,
+          "top1_click_per_scheduled_visit": 0.13429276315789473,
+          "cold_eligible_visits": 6080,
+          "cold_clicks": 232,
+          "cold_click_per_eligible_visit": 0.038157894736842106,
+          "cold_displayed_slots": 5567
+        }
+      },
+      "difference_pp": -0.1251333570412516,
+      "conditional_simulation_ci95_pp": [
+        -1.3114609263869126,
+        1.0148526404694176
+      ],
+      "rank_http_p50_ms": 8.627646000604727,
+      "rank_http_p95_ms": 90.050128851908,
+      "attempted_visits": 24000
+    },
+    {
+      "experiment_id": "ab-main",
+      "response_model": "preferences",
+      "complete": true,
+      "arms": {
+        "A": {
+          "policy": "popularity",
+          "users": 1480,
+          "scheduled_visits": 11840,
+          "served_visits": 11840,
+          "closed_feedback": 11840,
+          "simulated_clicks": 2598,
+          "simulated_visit_click_rate": 0.21942567567567567,
+          "top1_click_per_scheduled_visit": 0.13631756756756758,
+          "cold_eligible_visits": 5920,
+          "cold_clicks": 230,
+          "cold_click_per_eligible_visit": 0.03885135135135135,
+          "cold_displayed_slots": 5379
+        },
+        "B": {
+          "policy": "lightgbm",
+          "users": 1520,
+          "scheduled_visits": 12160,
+          "served_visits": 12160,
+          "closed_feedback": 12160,
+          "simulated_clicks": 3765,
+          "simulated_visit_click_rate": 0.30962171052631576,
+          "top1_click_per_scheduled_visit": 0.24259868421052633,
+          "cold_eligible_visits": 6080,
+          "cold_clicks": 592,
+          "cold_click_per_eligible_visit": 0.09736842105263158,
+          "cold_displayed_slots": 5092
+        }
+      },
+      "difference_pp": 9.01960348506401,
+      "conditional_simulation_ci95_pp": [
+        7.744287873399715,
+        10.277660472972972
+      ],
+      "rank_http_p50_ms": 8.621520997621701,
+      "rank_http_p95_ms": 91.98279615138745,
+      "attempted_visits": 24000
+    },
+    {
+      "experiment_id": "ab-null",
+      "response_model": "item_independent",
+      "complete": true,
+      "arms": {
+        "A": {
+          "policy": "popularity",
+          "users": 1480,
+          "scheduled_visits": 11840,
+          "served_visits": 11840,
+          "closed_feedback": 11840,
+          "simulated_clicks": 1811,
+          "simulated_visit_click_rate": 0.15295608108108108,
+          "top1_click_per_scheduled_visit": 0.08141891891891892,
+          "cold_eligible_visits": 5920,
+          "cold_clicks": 175,
+          "cold_click_per_eligible_visit": 0.02956081081081081,
+          "cold_displayed_slots": 5379
+        },
+        "B": {
+          "policy": "lightgbm",
+          "users": 1520,
+          "scheduled_visits": 12160,
+          "served_visits": 12160,
+          "closed_feedback": 12160,
+          "simulated_clicks": 1922,
+          "simulated_visit_click_rate": 0.1580592105263158,
+          "top1_click_per_scheduled_visit": 0.08486842105263158,
+          "cold_eligible_visits": 6080,
+          "cold_clicks": 258,
+          "cold_click_per_eligible_visit": 0.04243421052631579,
+          "cold_displayed_slots": 5092
+        }
+      },
+      "difference_pp": 0.5103129445234722,
+      "conditional_simulation_ci95_pp": [
+        -0.48141336237553384,
+        1.4854307432432412
+      ],
+      "rank_http_p50_ms": 8.914478999940911,
+      "rank_http_p95_ms": 91.69160180117615,
+      "attempted_visits": 24000
+    }
+  ],
+  "elapsed_seconds": 171.95986537499994,
+  "evidence_sha256": {
+    "protocol.json": "a72d4706c8dea45908a9c782cd873b20b3a7d31f542e2ef7f665551cc2e1936a",
+    "execution.json": "4e188dd41f329f3239ff91461f5377ffab3eac1cc1a830b7844a75ea61fac5ec",
+    "events.sqlite": "06bf356fc0b468971548d6d25d1fc93c6e29ae1bd1e9c0996c25ac9ff1be0c1e",
+    "client.jsonl": "2dfdbe2f9b69e056b15610107beb8a26e73dafdef777b1afd23ef163a024ef0f",
+    "metrics.prom": "6ce7ba65f3a59fa781b8bdcd4e4cba12b047cfd062d7799a662c0366deaa9a3b"
+  },
+  "run_directory": "runs/synthetic-ab-v1"
+}

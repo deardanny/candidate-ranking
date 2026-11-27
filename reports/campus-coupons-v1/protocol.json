@@ -1,0 +1,72 @@
+{
+  "frozen_utc": "2026-11-21T03:14:48.661777+00:00",
+  "configuration": {
+    "version": "campus-coupons-v1",
+    "seed": 20261121,
+    "evaluation_users": 3000,
+    "visits": 8,
+    "training_users": 2400,
+    "validation_users": 600,
+    "training_visits": 8,
+    "assignment_salt": "campus-coupons-user-assignment-v1",
+    "concurrency": 16,
+    "bootstrap_resamples": 2000,
+    "observation_window_minutes": 1440,
+    "experiments": [
+      {
+        "id": "aa-click",
+        "policies": {
+          "A": "click",
+          "B": "click"
+        },
+        "travel_constraint": true
+      },
+      {
+        "id": "ab-coupon",
+        "policies": {
+          "A": "click",
+          "B": "coupon"
+        },
+        "travel_constraint": true
+      },
+      {
+        "id": "ab-no-travel",
+        "policies": {
+          "A": "click",
+          "B": "coupon"
+        },
+        "travel_constraint": false
+      }
+    ],
+    "story": "A fictional campus app has one sponsored local coupon slot. Students have a short break before class; merchants want coupon redemption, not just an ad-detail click.",
+    "primary_metric": "Mean per-user fraction of all eight scheduled visits with a simulated coupon redemption",
+    "secondary_metrics": [
+      "clicks per scheduled visit",
+      "clicked without redemption per visit",
+      "redemptions per click (descriptive only)"
+    ],
+    "feature_observability": "Current intent, stated budget and minutes until class are supplied by the fictional user; merchant offer fields are known before ranking. Private preferences and outcomes are hidden from the ranker.",
+    "candidate_contract": "Same eight eligible, open, valid offers for either policy; one sponsored slot; equal bids, no budget or inventory competition modeled.",
+    "clock": "Accelerated simulation closes each 24-hour coupon window immediately in wall time. Coupon virtual delay and real server receipt time are separate fields; no real 24-hour wait or store visit occurs.",
+    "design": "Freeze before evaluation. Same 3000 personas reused in three conditions; disjoint training/validation IDs. No tuning after outcomes.",
+    "example_rule": "First B-assigned user at visit 0 whose click-policy and coupon-policy displayed offers differ in the AA and main conditions; illustrative paired simulator replay, not a new human experiment.",
+    "limits": [
+      "All merchants, ads, users, clicks and redemptions are invented. Zero LLM respondent calls and zero humans.",
+      "The deliberately modeled discount-curiosity versus travel-feasibility tension is a stress-test assumption, not a discovered fact about consumers.",
+      "The models and evaluation share a simulator; conditional intervals do not measure uncertainty about actual people.",
+      "Coupon redemption is the simulated business proxy; incremental footfall, profit, revenue and auction performance are not measured.",
+      "The no-travel condition removes only the post-click travel/time constraint; budget and preference effects remain.",
+      "These models do not evaluate or replace the trained FairJob/EB-NeRD models."
+    ]
+  },
+  "evaluation_outcomes_generated": false,
+  "design_sha256": "757057b3543486c729a8d8ae464bf3d238ca1a7582ef9ffde36f42fc16b837dd",
+  "artifact_sha256": {
+    "configuration.json": "8f9e017cff845ee75f985f1367321633d66e88a079d03b6dd783908069c99f42",
+    "catalog.json": "e2e9afabc0ae5dddadd83a002fe6badd35604958e0c2316d57579bed87b3d642",
+    "personas.jsonl": "707a1e2d57bbda56c24e9bbef371d6cd0757765c024972abccb34dd56961fd51",
+    "models/click.txt": "5ccf9824d7125f8e31e1cd7c2a4e591edf661e0696fc0505c18b20af8441576e",
+    "models/coupon.txt": "6141dbb4f70aaed053661d9ceb4555282e0d1a3654ac3c9c98e19dcc500d2527",
+    "models/metadata.json": "3582eb13473371b60bd4427abc6a251b47dc6814ae42919f883bc4bfe688b414"
+  }
+}

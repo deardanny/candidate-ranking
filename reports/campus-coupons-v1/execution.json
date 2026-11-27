@@ -1,0 +1,14 @@
+{
+  "completed_utc": "2026-11-21T03:18:32.644165+00:00",
+  "counts": {
+    "visits": 72000,
+    "errors": 0,
+    "parity": 120,
+    "retry_triplets": 90
+  },
+  "elapsed_seconds": 223.2679891250009,
+  "protocol_sha256": "594ecdcf6891a6bae88a230d2068f1c56b7a9796ee2138bad7ff7e9b70a93e5e",
+  "transport": "actual HTTP to owned uvicorn child; real receipt timestamps; accelerated virtual coupon window",
+  "humans": 0,
+  "llm_respondent_calls": 0
+}

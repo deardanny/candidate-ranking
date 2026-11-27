@@ -45,6 +45,39 @@ The [research note](docs/RESEARCH_NOTE.md) documents the hypotheses, controls, n
 
 The latest response model is an **offline research artifact**. The existing HTTP service uses an earlier snapshot model; live feedback ingestion and a new serving validation are required before promoting the latest model.
 
+## Synthetic A/B laboratory
+
+A separate, runnable experiment connects **3,000 simulated users → HTTP ranking → durable exposure logs → simulated responses → feedback ingestion → user-level analysis**. It compares a historical-popularity policy with a contextual LightGBM trained specifically for a fictional advertising environment. An A/A control and an item-independent response control exercise the same pipeline.
+
+```bash
+python3 scripts/run.py -m fairjob_ranker.simulation.runner \
+  --out runs/synthetic-ab-v1 --report reports/synthetic-ab-v1
+```
+
+Each user has eight visits per condition. Assignment is stable by user, request and feedback retries are idempotent, and missing feedback blocks effect estimation. The service reuses the request-snapshot and closed-feedback validation contracts. The run uses a seeded behavioral simulator, **zero LLM respondent calls and zero human participants**. These are new synthetic-world policies; the experiment does not establish an online CTR gain for the FairJob or EB-NeRD models.
+
+[Implementation and API guide](docs/SYNTHETIC_AB.md) · [Executed experiment](reports/synthetic-ab-v1/README.md) · [Audited aggregates](reports/synthetic-ab-v1/results.json)
+
+A follow-up [campus coupon experiment](docs/CAMPUS_COUPONS.md) compares click prediction with joint click-and-redemption prediction for one sponsored local offer. It adds an attributed coupon event and a control that removes the post-click travel constraint. [Results and assumptions](reports/campus-coupons-v1/README.md) remain explicitly synthetic.
+
+| Completed simulation | Primary outcome | B − A, percentage points | Conditional 95% interval |
+|:--|:--|--:|:--|
+| Popularity vs. contextual ranking | Simulated clicks per visit | +9.02 | [+7.74, +10.28] |
+| Click target vs. coupon target | Simulated redemptions per visit | +12.27 | [+11.05, +13.54] |
+| Same coupon comparison, travel constraint removed | Simulated redemptions per visit | −12.43 | [−13.94, −11.06] |
+
+The campus coupon policy reduced simulated clicks from **53.64% to 39.12%** while increasing redemptions from **16.31% to 28.58%**. Removing the post-click travel constraint reversed the redemption result without retraining either policy. The experiment tests the objective, attribution pipeline and dependence on behavioral assumptions; these numbers are not measured effects on people.
+
+![Campus coupon results: the same ranking policies reverse their redemption advantage when the travel constraint changes](reports/campus-coupons-v1/campus-coupons.png)
+
+Each laboratory processed **72,000 actual HTTP ranking requests**, reusing its 3,000-person synthetic cohort across three conditions. The campus laboratory also collected 72,000 closed click outcomes and 72,000 closed coupon outcomes. Both include A/A checks, request/feedback retry checks and HTTP/direct-score parity. A coupon observation window is accelerated virtual time, not a day of real-world follow-up.
+
+[Click-laboratory figure](reports/synthetic-ab-v1/synthetic-ab.svg) · [Coupon figure, SVG](reports/campus-coupons-v1/campus-coupons.svg) · [Coupon verification](reports/campus-coupons-v1/verification.json)
+
+## Consolidated analysis report
+
+[Download the 10-page Korean PDF](output/pdf/ads-ranking-analysis-report-ko.pdf). The report is dated 21 November 2026 and covers the real-data research, negative findings, serving measurements and both simulation laboratories. Publication-status statements in the PDF describe that date; the simulation code and report are now included here. See the [publication and evidence notes](docs/PUBLICATION.md) for what is included and how to reproduce the simulations without licensed data.
+
 ## Serving measurements
 
 The earlier news API served **3,000/3,000 requests within 50 ms at 100 requests/s for 30 seconds**, with p95 **5.00 ms**. A separate 50 requests/s run lasted 60 seconds. Server and load generator ran on the same local Mac.
@@ -65,7 +98,7 @@ python3.12 -m venv .venv
 python3 scripts/run.py -m pytest -q
 ```
 
-**Latest local validation:** 131 tests passed. The tests exercise synthetic inputs and do not require the licensed datasets. Dependency versions are pinned in `pyproject.toml` and the `requirements-*.lock` files.
+**Latest local validation:** 152 tests passed. The tests exercise synthetic inputs and do not require the licensed datasets. Dependency versions are pinned in `pyproject.toml` and the `requirements-*.lock` files.
 
 To regenerate the research figures from the published aggregate reports:
 
@@ -83,6 +116,7 @@ src/fairjob_ranker/
   ebnerd/                  chronological features, feedback state, evaluation, API
   diagnostics/             ablation, residual and reproduction experiments
   v2/                      neural models, registry, shadow and release controls
+  simulation/              fictional advertising worlds, HTTP experiments, event analysis
   log_contract.py          request snapshots and closed-feedback contracts
 scripts/                   preparation, training, audits, serving and figure generation
 tests/                     synthetic contract, feature, metric and service checks
@@ -98,6 +132,6 @@ monitoring/                Prometheus and Grafana configuration
 - **FairJob:** Criteo advertising data, distributed under CC BY-NC-SA 4.0. The study concerns candidate selection; it does not establish fairness guarantees.
 - **EB-NeRD:** Ekstra Bladet news recommendation logs. Obtain access and accept the publisher's applicable research terms independently.
 - The datasets are different tasks. FairJob and EB-NeRD results are not pooled into a single benchmark or compared as equivalent business outcomes.
-- No online A/B test, revenue measurement, certified production availability or first-exposure item-generalization claim is made.
+- The A/B laboratories use synthetic traffic. No human online A/B test, revenue measurement, certified production availability or first-exposure item-generalization claim is made.
 
 See [dataset references and access instructions](docs/DATA_ACCESS.md). Public availability of this code does not grant rights to the source datasets.

@@ -1,0 +1,65 @@
+{
+  "selection": "First B-assigned user at visit 0 whose click-policy and coupon-policy displayed offers differ in the AA and main conditions; illustrative paired simulator replay, not a new human experiment.",
+  "user_id": "eval-00008",
+  "visit_index": 0,
+  "context": {
+    "budget": 14.376289254209945,
+    "interest": 0,
+    "minutes_until_class": 18.0
+  },
+  "candidate_ids": [
+    "campus-01",
+    "campus-17",
+    "campus-08",
+    "campus-07",
+    "campus-00",
+    "campus-06",
+    "campus-05",
+    "campus-02"
+  ],
+  "click_policy": {
+    "ad": {
+      "item_id": "campus-06",
+      "merchant": "Campus Roast",
+      "category": 0,
+      "product": "Americano",
+      "original_price": 6.92,
+      "discount": 0.5,
+      "price": 3.46,
+      "walk_minutes": 14,
+      "service_minutes": 2,
+      "round_trip_minutes": 30,
+      "sponsored": true,
+      "fictional": true,
+      "campaign_eligible": true
+    },
+    "observed_simulated_outcome": {
+      "clicked": true,
+      "redeemed": false,
+      "virtual_redemption_delay_minutes": null
+    }
+  },
+  "coupon_policy": {
+    "ad": {
+      "item_id": "campus-01",
+      "merchant": "Library Coffee",
+      "category": 0,
+      "product": "Americano",
+      "original_price": 5.0,
+      "discount": 0.1,
+      "price": 4.5,
+      "walk_minutes": 3,
+      "service_minutes": 3,
+      "round_trip_minutes": 9,
+      "sponsored": true,
+      "fictional": true,
+      "campaign_eligible": true
+    },
+    "observed_simulated_outcome": {
+      "clicked": false,
+      "redeemed": false,
+      "virtual_redemption_delay_minutes": null
+    }
+  },
+  "interpretation": "Same invented persona in two separate simulation conditions, not a person receiving both arms in the randomized comparison."
+}

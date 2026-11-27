@@ -1,0 +1,32 @@
+{
+  "schema_version": "synthetic-ab-v1",
+  "seed": 20261120,
+  "evaluation_users": 3000,
+  "visits_per_user": 8,
+  "training_users": 2000,
+  "validation_users": 400,
+  "training_visits": 8,
+  "candidates_per_request": 8,
+  "display_size": 3,
+  "concurrency": 16,
+  "bootstrap_resamples": 2000,
+  "assignment_salt": "synthetic-ranking-v1-fixed-before-outcomes",
+  "experiments": [
+    {"id": "aa-check", "policies": {"A": "popularity", "B": "popularity"}, "response": "preferences"},
+    {"id": "ab-main", "policies": {"A": "popularity", "B": "lightgbm"}, "response": "preferences"},
+    {"id": "ab-null", "policies": {"A": "popularity", "B": "lightgbm"}, "response": "item_independent"}
+  ],
+  "primary_metric": "Mean per-user fraction of scheduled visits with a simulated click; intention-to-treat",
+  "uncertainty": "Resample simulated users within arm, preserving all visits. Conditional on this invented world only.",
+  "analysis": "Fixed 3000-user horizon, no early stopping, no tuning after evaluation, SRM at user level, missing feedback never imputed as no-click",
+  "response_source": "Seeded probabilistic behavioral simulator; zero LLM respondent calls; no human traffic",
+  "comparison": "New synthetic-world models: historical popularity versus contextual LightGBM, not the FairJob/EB-NeRD trained artifacts",
+  "limitations": [
+    "Preferences, examination, attrition and click probabilities are invented and not calibrated to people.",
+    "Training and evaluation share the simulator, so model compatibility can produce an apparent lift by construction.",
+    "Three experiments reuse the same 3000 personas; they are not 9000 independent users.",
+    "Simulated cold ads are new IDs from the same invented feature distribution, not real first-exposure evidence.",
+    "No bids, payment, conversion, advertiser revenue, real browser visibility or real human clicks are measured.",
+    "Synthetic feedback never updates the existing FairJob/EB-NeRD production or research artifacts."
+  ]
+}

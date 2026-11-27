@@ -1,0 +1,305 @@
+{
+  "synthetic": true,
+  "humans": 0,
+  "llm_respondent_calls": 0,
+  "configuration": {
+    "version": "campus-coupons-v1",
+    "seed": 20261121,
+    "evaluation_users": 3000,
+    "visits": 8,
+    "training_users": 2400,
+    "validation_users": 600,
+    "training_visits": 8,
+    "assignment_salt": "campus-coupons-user-assignment-v1",
+    "concurrency": 16,
+    "bootstrap_resamples": 2000,
+    "observation_window_minutes": 1440,
+    "experiments": [
+      {
+        "id": "aa-click",
+        "policies": {
+          "A": "click",
+          "B": "click"
+        },
+        "travel_constraint": true
+      },
+      {
+        "id": "ab-coupon",
+        "policies": {
+          "A": "click",
+          "B": "coupon"
+        },
+        "travel_constraint": true
+      },
+      {
+        "id": "ab-no-travel",
+        "policies": {
+          "A": "click",
+          "B": "coupon"
+        },
+        "travel_constraint": false
+      }
+    ],
+    "story": "A fictional campus app has one sponsored local coupon slot. Students have a short break before class; merchants want coupon redemption, not just an ad-detail click.",
+    "primary_metric": "Mean per-user fraction of all eight scheduled visits with a simulated coupon redemption",
+    "secondary_metrics": [
+      "clicks per scheduled visit",
+      "clicked without redemption per visit",
+      "redemptions per click (descriptive only)"
+    ],
+    "feature_observability": "Current intent, stated budget and minutes until class are supplied by the fictional user; merchant offer fields are known before ranking. Private preferences and outcomes are hidden from the ranker.",
+    "candidate_contract": "Same eight eligible, open, valid offers for either policy; one sponsored slot; equal bids, no budget or inventory competition modeled.",
+    "clock": "Accelerated simulation closes each 24-hour coupon window immediately in wall time. Coupon virtual delay and real server receipt time are separate fields; no real 24-hour wait or store visit occurs.",
+    "design": "Freeze before evaluation. Same 3000 personas reused in three conditions; disjoint training/validation IDs. No tuning after outcomes.",
+    "example_rule": "First B-assigned user at visit 0 whose click-policy and coupon-policy displayed offers differ in the AA and main conditions; illustrative paired simulator replay, not a new human experiment.",
+    "limits": [
+      "All merchants, ads, users, clicks and redemptions are invented. Zero LLM respondent calls and zero humans.",
+      "The deliberately modeled discount-curiosity versus travel-feasibility tension is a stress-test assumption, not a discovered fact about consumers.",
+      "The models and evaluation share a simulator; conditional intervals do not measure uncertainty about actual people.",
+      "Coupon redemption is the simulated business proxy; incremental footfall, profit, revenue and auction performance are not measured.",
+      "The no-travel condition removes only the post-click travel/time constraint; budget and preference effects remain.",
+      "These models do not evaluate or replace the trained FairJob/EB-NeRD models."
+    ]
+  },
+  "experiments": [
+    {
+      "experiment_id": "aa-click",
+      "policies": {
+        "A": "click",
+        "B": "click"
+      },
+      "travel_constraint": true,
+      "complete": true,
+      "arms": {
+        "A": {
+          "users": 1523,
+          "visits": 12184,
+          "clicks": 6536,
+          "coupons": 1987,
+          "click_rate": 0.5364412344057781,
+          "coupon_rate": 0.1630827314510834,
+          "clicked_without_coupon_per_visit": 0.3733585029546947,
+          "coupon_per_click_descriptive": 0.30400856793145653
+        },
+        "B": {
+          "users": 1477,
+          "visits": 11816,
+          "clicks": 6250,
+          "coupons": 1934,
+          "click_rate": 0.5289438050101557,
+          "coupon_rate": 0.1636763710223426,
+          "clicked_without_coupon_per_visit": 0.36526743398781314,
+          "coupon_per_click_descriptive": 0.30944
+        }
+      },
+      "effects": {
+        "click": {
+          "difference_pp": -0.7497429395622368,
+          "conditional_ci95_pp": [
+            -2.2737538903591155,
+            0.6280703051961997
+          ]
+        },
+        "coupon": {
+          "difference_pp": 0.059363957125918576,
+          "conditional_ci95_pp": [
+            -1.0868214960317328,
+            1.1515174012023253
+          ]
+        }
+      }
+    },
+    {
+      "experiment_id": "ab-coupon",
+      "policies": {
+        "A": "click",
+        "B": "coupon"
+      },
+      "travel_constraint": true,
+      "complete": true,
+      "arms": {
+        "A": {
+          "users": 1523,
+          "visits": 12184,
+          "clicks": 6536,
+          "coupons": 1987,
+          "click_rate": 0.5364412344057781,
+          "coupon_rate": 0.1630827314510834,
+          "clicked_without_coupon_per_visit": 0.3733585029546947,
+          "coupon_per_click_descriptive": 0.30400856793145653
+        },
+        "B": {
+          "users": 1477,
+          "visits": 11816,
+          "clicks": 4622,
+          "coupons": 3377,
+          "click_rate": 0.39116452268111035,
+          "coupon_rate": 0.2857989167230873,
+          "clicked_without_coupon_per_visit": 0.10536560595802302,
+          "coupon_per_click_descriptive": 0.7306360882734747
+        }
+      },
+      "effects": {
+        "click": {
+          "difference_pp": -14.527671172466771,
+          "conditional_ci95_pp": [
+            -16.03504696215244,
+            -13.132618457850768
+          ]
+        },
+        "coupon": {
+          "difference_pp": 12.271618527200392,
+          "conditional_ci95_pp": [
+            11.04701352562447,
+            13.543125389258186
+          ]
+        }
+      }
+    },
+    {
+      "experiment_id": "ab-no-travel",
+      "policies": {
+        "A": "click",
+        "B": "coupon"
+      },
+      "travel_constraint": false,
+      "complete": true,
+      "arms": {
+        "A": {
+          "users": 1523,
+          "visits": 12184,
+          "clicks": 6536,
+          "coupons": 5198,
+          "click_rate": 0.5364412344057781,
+          "coupon_rate": 0.4266250820748523,
+          "clicked_without_coupon_per_visit": 0.1098161523309258,
+          "coupon_per_click_descriptive": 0.7952876376988984
+        },
+        "B": {
+          "users": 1477,
+          "visits": 11816,
+          "clicks": 4622,
+          "coupons": 3572,
+          "click_rate": 0.39116452268111035,
+          "coupon_rate": 0.3023019634394042,
+          "clicked_without_coupon_per_visit": 0.08886255924170616,
+          "coupon_per_click_descriptive": 0.7728256166161834
+        }
+      },
+      "effects": {
+        "click": {
+          "difference_pp": -14.527671172466771,
+          "conditional_ci95_pp": [
+            -16.03504696215244,
+            -13.132618457850768
+          ]
+        },
+        "coupon": {
+          "difference_pp": -12.43231186354481,
+          "conditional_ci95_pp": [
+            -13.944555186530522,
+            -11.057164801191036
+          ]
+        }
+      }
+    }
+  ],
+  "example": {
+    "selection": "First B-assigned user at visit 0 whose click-policy and coupon-policy displayed offers differ in the AA and main conditions; illustrative paired simulator replay, not a new human experiment.",
+    "user_id": "eval-00008",
+    "visit_index": 0,
+    "context": {
+      "budget": 14.376289254209945,
+      "interest": 0,
+      "minutes_until_class": 18.0
+    },
+    "candidate_ids": [
+      "campus-01",
+      "campus-17",
+      "campus-08",
+      "campus-07",
+      "campus-00",
+      "campus-06",
+      "campus-05",
+      "campus-02"
+    ],
+    "click_policy": {
+      "ad": {
+        "item_id": "campus-06",
+        "merchant": "Campus Roast",
+        "category": 0,
+        "product": "Americano",
+        "original_price": 6.92,
+        "discount": 0.5,
+        "price": 3.46,
+        "walk_minutes": 14,
+        "service_minutes": 2,
+        "round_trip_minutes": 30,
+        "sponsored": true,
+        "fictional": true,
+        "campaign_eligible": true
+      },
+      "observed_simulated_outcome": {
+        "clicked": true,
+        "redeemed": false,
+        "virtual_redemption_delay_minutes": null
+      }
+    },
+    "coupon_policy": {
+      "ad": {
+        "item_id": "campus-01",
+        "merchant": "Library Coffee",
+        "category": 0,
+        "product": "Americano",
+        "original_price": 5.0,
+        "discount": 0.1,
+        "price": 4.5,
+        "walk_minutes": 3,
+        "service_minutes": 3,
+        "round_trip_minutes": 9,
+        "sponsored": true,
+        "fictional": true,
+        "campaign_eligible": true
+      },
+      "observed_simulated_outcome": {
+        "clicked": false,
+        "redeemed": false,
+        "virtual_redemption_delay_minutes": null
+      }
+    },
+    "interpretation": "Same invented persona in two separate simulation conditions, not a person receiving both arms in the randomized comparison."
+  },
+  "integrity": {
+    "passed": true,
+    "error_count": 0,
+    "errors": [],
+    "database_counts": {
+      "assignments": 9000,
+      "requests": 72000,
+      "feedback": 72000,
+      "coupons": 72000
+    },
+    "users_per_arm": {
+      "A": 1523,
+      "B": 1477
+    },
+    "assignment_srm_p": 0.41131802071616547,
+    "client_execution": {
+      "visits": 72000,
+      "errors": 0,
+      "parity": 120,
+      "retry_triplets": 90
+    },
+    "missing_outcomes_imputed": false
+  },
+  "elapsed_seconds": 223.2679891250009,
+  "evidence_sha256": {
+    "protocol.json": "594ecdcf6891a6bae88a230d2068f1c56b7a9796ee2138bad7ff7e9b70a93e5e",
+    "execution.json": "e19dbcbb603f7c134f2b07868964c23a616e9c77001d2ab041b4c1584278dda2",
+    "events.sqlite": "7aec70c050498727944f7c028e456028285b66e4587aceaf41dedada3987d81e",
+    "client.jsonl": "f97af4ac663f1fdf0c7f58d2783d3f65589c25982c862f253ccc20f12955958b",
+    "metrics.prom": "3177bb0265d8302937dc700803f2c9d2539edf83b82dc76f32b8622064987a5b"
+  },
+  "uncertainty": "Within-arm user bootstrap; conditional on invented world, not population uncertainty about humans.",
+  "run_directory": "runs/campus-coupons-v1"
+}

@@ -1,0 +1,30 @@
+{
+  "frozen_sources_match": {
+    "src/fairjob_ranker/simulation/campus_analysis.py": true,
+    "src/fairjob_ranker/simulation/world.py": true,
+    "src/fairjob_ranker/simulation/service.py": true,
+    "src/fairjob_ranker/simulation/campus_world.py": true,
+    "src/fairjob_ranker/simulation/runner.py": true,
+    "src/fairjob_ranker/simulation/analysis.py": true,
+    "src/fairjob_ranker/simulation/__init__.py": true,
+    "src/fairjob_ranker/simulation/campus_service.py": true,
+    "src/fairjob_ranker/simulation/campus_run.py": true,
+    "src/fairjob_ranker/simulation/policies.py": true,
+    "src/fairjob_ranker/log_contract.py": true
+  },
+  "evidence_files_match": {
+    "protocol.json": true,
+    "execution.json": true,
+    "events.sqlite": true,
+    "client.jsonl": true,
+    "metrics.prom": true
+  },
+  "full_suite": {
+    "passed": 152,
+    "warnings": 2,
+    "seconds": 7.1,
+    "command": "python3 scripts/run.py -m pytest -q"
+  },
+  "campus_tests": 8,
+  "all_verified": true
+}

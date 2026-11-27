@@ -1,0 +1,23 @@
+{
+  "created_date_new_york": "2026.11.21",
+  "pdf": "ads-ranking-analysis-report-ko.pdf",
+  "pages": 10,
+  "sha256": "3f7c7ee095a1c1fe4479551fc08ef731f298150145cf19c571ed17fb86e1cf8b",
+  "sources": {
+    "reports/research-review/RESULTS.md": "997a0992ba5b6174cc46d91e66a4c58454a8c2e3545887661769f97570ad669d",
+    "reports/context-ablation/RESULTS.md": "41f1168a6b5823badf2c13c43d126908a08cc2ca7b478735f7b4583d4fe8a39e",
+    "reports/ebnerd-metadata-audit/RESULTS.md": "bd1b31cbc33075839f972cecadd2da86590a28f0e358eddcef39479bcecdedff",
+    "reports/ebnerd-top1-feedback/final_results.json": "c933b7e634e0343b8f166201e13a4beaa895b6f8420f377417c3249a9b9c6c7f",
+    "reports/ebnerd-cold-policy/continuous_feasibility.json": "0943b1ac034213c194517011f6aa06bb1e91d8bfccd51f0a898f54fe8c0d3482",
+    "reports/ebnerd-serving/verification.json": "c75938e83af2abbbeab056ee420b214f21cc3748acea9e86d661a79c6b61c385",
+    "reports/synthetic-ab-v1/results.json": "c66d6462618f2acb44fa2aa2789c47cc9c8cdec8f4ba8854a3db06ffc7b700c1",
+    "reports/campus-coupons-v1/results.json": "61f15ddf5316dde777b069ed56b2435bcde38cfee876a89bfb6bde4c04354277",
+    "reports/research-figures/figure-data.json": "3b6de67539c80ff45f19f522db03f5ab98166e379fba6d92ae6b793426980559",
+    "reports/synthetic-persona-pilot-v1/results.json": "89d3cdddc3b2869491dc3887d600229771e2b78d49714dc74d031d2d6c3d716f",
+    "reports/campus-coupons-v1/verification.json": "9d865ee4a580f2024cc30da7359bca1735af9c314692e04c2cc10839b73e7ac3",
+    "reports/synthetic-ab-v1/verification.json": "4232f43f84a2d1372822e31b6ac9dfff55609d13d2db0f896b127739f7df89da",
+    "reports/ebnerd-top1-feedback/verification.json": "f1d47b3f307274b5640dd6aebc15fab199c9ca60f860f04d5b8427c0a3908c2c"
+  },
+  "scope": "Korean report; real logged-data results separated from synthetic outcomes; no human online A/B claim",
+  "generator_sha256": "eb9103d137198e9468ed50897eb9524a790b7a6ca4ffdfbd376b411ac761d870"
+}

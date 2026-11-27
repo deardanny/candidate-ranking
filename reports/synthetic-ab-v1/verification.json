@@ -1,0 +1,33 @@
+{
+  "recorded_utc": "2026-11-21T02:53:01.489274+00:00",
+  "test_suite": {
+    "command": "python3 scripts/run.py -m pytest -q",
+    "passed": 144,
+    "warnings": 2,
+    "elapsed_seconds": 6.32,
+    "receipt": "Recorded from the completed shell test run; the full suite includes 13 synthetic A/B tests."
+  },
+  "frozen_source_matches": {
+    "src/fairjob_ranker/simulation/world.py": true,
+    "src/fairjob_ranker/simulation/service.py": true,
+    "src/fairjob_ranker/simulation/runner.py": true,
+    "src/fairjob_ranker/simulation/analysis.py": true,
+    "src/fairjob_ranker/simulation/__init__.py": true,
+    "src/fairjob_ranker/simulation/policies.py": true,
+    "src/fairjob_ranker/log_contract.py": true
+  },
+  "evidence_hashes_match": {
+    "protocol.json": true,
+    "execution.json": true,
+    "events.sqlite": true,
+    "client.jsonl": true,
+    "metrics.prom": true
+  },
+  "prometheus_counts_match_database": true,
+  "source_figures": {
+    "results.json": "c66d6462618f2acb44fa2aa2789c47cc9c8cdec8f4ba8854a3db06ffc7b700c1",
+    "synthetic-ab.png": "eed2c883ad0b0e6e28129cb6a996c22edc5a1dfc1ba16c62b48b89e6f930b98b",
+    "synthetic-ab.svg": "0187dc5fd3a5ecb6b7936deb27b2d6bcdb7f0c0586e4ad717c7ac4c438e8a00b"
+  },
+  "interpretation": "Synthetic environment only; no real CTR, no LLM respondents, no promotion of existing models."
+}

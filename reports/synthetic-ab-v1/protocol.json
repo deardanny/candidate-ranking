@@ -1,0 +1,81 @@
+{
+  "frozen_utc": "2026-11-21T02:44:56.247630+00:00",
+  "configuration": {
+    "schema_version": "synthetic-ab-v1",
+    "seed": 20261120,
+    "evaluation_users": 3000,
+    "visits_per_user": 8,
+    "training_users": 2000,
+    "validation_users": 400,
+    "training_visits": 8,
+    "candidates_per_request": 8,
+    "display_size": 3,
+    "concurrency": 16,
+    "bootstrap_resamples": 2000,
+    "assignment_salt": "synthetic-ranking-v1-fixed-before-outcomes",
+    "experiments": [
+      {
+        "id": "aa-check",
+        "policies": {
+          "A": "popularity",
+          "B": "popularity"
+        },
+        "response": "preferences"
+      },
+      {
+        "id": "ab-main",
+        "policies": {
+          "A": "popularity",
+          "B": "lightgbm"
+        },
+        "response": "preferences"
+      },
+      {
+        "id": "ab-null",
+        "policies": {
+          "A": "popularity",
+          "B": "lightgbm"
+        },
+        "response": "item_independent"
+      }
+    ],
+    "primary_metric": "Mean per-user fraction of scheduled visits with a simulated click; intention-to-treat",
+    "uncertainty": "Resample simulated users within arm, preserving all visits. Conditional on this invented world only.",
+    "analysis": "Fixed 3000-user horizon, no early stopping, no tuning after evaluation, SRM at user level, missing feedback never imputed as no-click",
+    "response_source": "Seeded probabilistic behavioral simulator; zero LLM respondent calls; no human traffic",
+    "comparison": "New synthetic-world models: historical popularity versus contextual LightGBM, not the FairJob/EB-NeRD trained artifacts",
+    "limitations": [
+      "Preferences, examination, attrition and click probabilities are invented and not calibrated to people.",
+      "Training and evaluation share the simulator, so model compatibility can produce an apparent lift by construction.",
+      "Three experiments reuse the same 3000 personas; they are not 9000 independent users.",
+      "Simulated cold ads are new IDs from the same invented feature distribution, not real first-exposure evidence.",
+      "No bids, payment, conversion, advertiser revenue, real browser visibility or real human clicks are measured.",
+      "Synthetic feedback never updates the existing FairJob/EB-NeRD production or research artifacts."
+    ]
+  },
+  "design_sha256": "b9a3ea533993eeb944865d7b26fc133bfd85eab9d612fbf48886cb8ccb622c73",
+  "evaluation_outcomes_generated": false,
+  "artifact_sha256": {
+    "catalog.json": "2fa41c87419478178d2a46da10b1c0a76260d3a6a5b8dc707587b87b00cd1266",
+    "personas.jsonl": "e6e980b6162b9bce00157ebec63ae56f1a84c8e2538d6eb2eb31b88fd16550f5",
+    "configuration.json": "2b15779abbdfb2f6b5f2b2aae5fa4141995ce007bc6db929505a4addb5bb0f8d",
+    "models/model.txt": "0af0491efdae82432f71a209eae610427353f624c1ea11c0e135bbf652955dc9",
+    "models/popularity.json": "8a8ccf2e243ef80d11d029b493d73a20ad8e4b1521352a91dc1e999b6176fc14",
+    "models/metadata.json": "fc2900f98c25ff68bf10fda9a7e0fcb53f79d79ba13a39aaabc9a33be8a74a22"
+  },
+  "dependencies": {
+    "numpy": "2.3.5",
+    "lightgbm": "4.6.0",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "scipy": "1.16.3",
+    "pydantic": "2.14.3"
+  },
+  "response_source": "Seeded probabilistic behavioral simulator; zero LLM respondent calls; no human traffic",
+  "human_participants": 0,
+  "real_clicks": 0,
+  "llm_respondent_calls": 0,
+  "served_model_family": "new synthetic-world models only",
+  "timestamp_semantics": "Actual server receipt/feature computation/serve/feedback receipt clocks; simulated visit index is a separate field."
+}
